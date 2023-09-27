@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @font-face {
+            font-family: Inter;
+            src: url(sansation_light.woff);
+        }
+
+        /* TAGS */
+        body {
+            font-family: Inter;
+            margin: 0px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        img {
+            display: block;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+        }
+
+        button {
+            border-radius: var(--radius-md, 4px);
+            background: #D9322F;
+            display: flex;
+            min-width: var(--cta-sm, 40px);
+            min-height: var(--cta-sm, 40px);
+            padding: var(--xs, 8px) var(--sm, 12px);
+            justify-content: center;
+            align-items: center;
+            border: 1px solid red;
+            gap: var(--xs, 8px);
+            align-self: stretch;
+            color: white;
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        a {
+            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
+            font-variant-numeric: lining-nums tabular-nums slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            /* 150% */
+            letter-spacing: -0.16px;
+            text-decoration-line: underline;
+        }
+
+        select {
+            /* appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none; */
+            border: none;
+            /* needed for Firefox: */
+            overflow: hidden;
+            color: white;
+            background-color: transparent;
+
+        }
+
+        hr {
+            margin-block-start: 16px;
+            margin-block-end: 16px;
+            height: 1px;
+            color: var(--light-mode-fill-40, rgba(0, 0, 0, 0.10));
+        }
+
+        /* CLASSES */
+
+
+        .container {
+            display: flex;
+
+        }
+
+        .item {
+            flex-basis: 100%;
+        }
+
+        .right-divider {
+            border-right: 1px solid rgba(0, 0, 0, 0.10);
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+
+
+        .review-box {
+            min-width: 320px;
+        }
+
+        .user-image {
+            margin-right: 16px;
+        }
+
+        .relief-image {
+            margin-right: 48px;
+        }
+
+        .buy-section {
+            background: #F6F0E5;
+            padding: 16px;
+            max-width: 768px;
+            margin: auto;
+        }
+
+
+        .icon {
+            max-width: 32;
+            max-height: 32;
+            padding-right: 16px;
+        }
+
+        .heading-box {
+            max-width: 480px;
+        }
+
+        .grey-background {
+            background: rgba(0, 0, 0, 0.03);
+
+        }
+
+        .articles-title {
+            padding-top: 16px;
+        }
+
+        .box {
+            padding-top: 48px;
+            padding-bottom: 48px;
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+
+        .buy-box {
+            padding-top: 48px;
+        }
+
+        .donation-box {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        .preapred-box {
+            background-color: rgba(217, 50, 47, 1);
+        }
+
+        .prepared-title {
+            min-width: 552px;
+            padding-right: 32px;
+        }
+
+        .prepared-image {
+            padding-right: 8px;
+        }
+
+        .prepared-text {
+            color: white;
+        }
+
+        .img-container {
+            padding-left: 32px;
+        }
+
+        .prepared-select {
+            color: #EEDEBF;
+            font-variant-numeric: lining-nums proportional-nums stacked-fractions slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            font-family: Inter;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 650;
+            line-height: 30px;
+            text-decoration-line: underline;
+        }
+
+        .default-select {
+            color: #D9322F;
+            font-variant-numeric: lining-nums tabular-nums slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            /* Emphasis/20 */
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+            /* 142.857% */
+        }
+
+        .buy-right-section {
+            background-color: white;
+            padding: 16px;
+            max-width: 288px;
+            margin-left: 16px;
+        }
+
+        .space-between-row {
+            justify-content: space-between;
+            padding-bottom: 4px;
+        }
+
+        .coming-soon {
+            margin-right: 16px;
+            background: #F6F0E5;
+        }
+
+        .donation {
+            border-radius: var(--radius-md, 4px);
+            background: #F6F0E5;
+            padding: 16px;
+            margin-top: 32px;
+        }
+
+        .px16 {
+            padding-top: 16px;
+        }
+
+        /* TEXT STYLES */
+
+        .body30 {
+            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
+            font-variant-numeric: lining-nums tabular-nums slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            /* Body/30 */
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            /* 150% */
+            letter-spacing: -0.16px;
+        }
+
+        .emphasis10 {
+            color: #D9322F;
+            font-variant-numeric: lining-nums tabular-nums slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            /* Emphasis/10 */
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 18px;
+            /* 150% */
+        }
+
+        .heading30 {
+            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
+            font-variant-numeric: lining-nums proportional-nums stacked-fractions slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            /* Heading/30 */
+            font-family: Inter;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 650;
+            line-height: 40px;
+            /* 133.333% */
+            letter-spacing: -0.3px;
+        }
+
+
+        .heading20 {
+            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
+            font-variant-numeric: lining-nums proportional-nums stacked-fractions slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            /* Heading/20 */
+            font-family: Inter;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 650;
+            line-height: 30px;
+            /* 136.364% */
+        }
+
+        .link-30 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .heading10 {
+            /* Heading/10 */
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 650;
+            line-height: 24px;
+            /* 150% */
+            letter-spacing: 0.16px;
+        }
+
+        .red10 {
+            color: #D9322F;
+        }
+
+        .emphasis30 {
+            font-variant-numeric: lining-nums tabular-nums slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            /* Emphasis/30 */
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            /* 150% */
+            letter-spacing: -0.16px;
+        }
+
+        .heading50 {
+            font-variant-numeric: lining-nums proportional-nums stacked-fractions slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            /* Heading/50 */
+            font-family: Inter;
+            font-size: 58px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 64px;
+            /* 110.345% */
+            letter-spacing: -1.74px;
+        }
+
+        .body20 {
+            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
+            font-variant-numeric: lining-nums tabular-nums slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            /* Body/20 */
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            /* 142.857% */
+        }
+
+        .green10 {
+            color: var(--light-mode-success-green-10, #00A645);
+        }
+
+        .waitlist-button {
+            border-radius: var(--radius-md, 4px);
+            background: var(--light-mode-fill-10, rgba(0, 0, 0, 0.90));
+            border: 1px solid rgba(0, 0, 0, 0.90);
+        }
+
+        .testmonials {
+            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
+            font-variant-numeric: lining-nums tabular-nums slashed-zero;
+            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            /* 150% */
+            letter-spacing: -0.16px;
+            text-decoration-line: underline;
+        }
+
+        .modal {
+            max-width: 700px !important;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").hide();
+            });
+
+            $(".city").change(function () {
+                $(".city").val(this.value);
+                $(".city-paragraph").text(this.value);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="box  preapred-box">
+            <div class="container">
+                <div class="preapred-title">
+                    <h1 class="prepared-text heading50">Be prepared.</h1>
+
+                    <div class="container">
+                        <p>
+                            <span>
+                                <p class="heading30 prepared-text" style="color: white; padding-right: 4px;"> I'm living
+                                    in </p>
+                            </span>
+                            <span style="display: flex;">
+                                <select name="city" class="city prepared-select" id="city">
+                                    <option value="Orlando, FL">Orlando, FL</option>
+                                    <option value="New York, NY">New York, NY</option>
+                                </select>
+                            </span>
+                        </p>
+
+
+
+                    </div>
+
+                    <p class="prepared-text emphasis30">
+                        Stable is here to give you and your family peace of mind. We offer tickets that help everyday
+                        people
+                        take control over their exposure to future events, such as natural disasters like hurricanes, or
+                        the
+                        increase in the price of gas. 
+                        It’s that simple: you buy tickets and if the event happens you get paid out in less than 24
+                        hours.
+                    </p>
+                </div>
+                <img class="prepared-image" src="hurricane.svg" alt="Girl in a jacket">
+                <img class="prepared-image" src="emergency.svg" alt="Girl in a jacket">
+                <img src="gas.svg" alt="Girl in a jacket">
+            </div>
+
+        </div>
+
+        <div class="buy-box">
+            <div class="container buy-section">
+                <div style="width: 432px;">
+                    <div class="container">
+                        <select name="city" class="city default-select" id="city">
+                            <option value="Orlando, FL">Orlando, FL</option>
+                            <option value="New York, NY">New York, NY</option>
+                        </select>
+                    </div>
+
+
+                    <p class="heading20">
+                        Hurricane tickets nearby
+
+                    </p>
+
+                    <img style="margin-top: 16px; height: 309px; max-width: 432px; object-fit: cover;"
+                        src="hurricane-tickets.svg" alt="Girl in a jacket">
+                </div>
+
+                <div class="buy-right-section">
+                    <p class="city-paragraph body20" style="padding-bottom: 4px;">
+                        Orlando, FL
+                    </p>
+                    <p class="heading10" style="padding-bottom: 4px;">
+                        Category 3+ Hurricanes in 2023
+                    </p>
+                    <p class="body20">
+                        1 ticket
+                    </p>
+                    <hr>
+                    <div class="container space-between-row">
+                        <p class="body20">Cost</p>
+                        <p class="emphasis30">$50</p>
+                    </div>
+                    <div class="container space-between-row">
+                        <p class="body20">Payout</p>
+                        <p class="heading20 green10">$1,000</p>
+                    </div>
+
+                    <hr>
+                    <p class="body20">Payouts available immediately after hurricane verified by NOAA.</p>
+                    <button>Buy $50 supplemental coverage</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box">
+
+            <div class="container">
+
+                <div>
+                    <h3 class="heading30 heading-box">Get immediate relief after a hurricane hits</h3>
+                    <p class="body30">
+                        We provide supplemental hurricane coverage that gets cash into people’s hands within 24 hours
+                        after
+                        a Category 3 hurricane hits.
+                    </p>
+                    <p class="body30">
+                        You can buy tickets at $50 that each pay out 13x - 50x depending on the odds a storm hits your
+                        city.
+                        If you buy 5 tickets for Charleston (a 17x payout), you’d receive $4,250 for your initial $250
+                        purchase. These tickets are made possible by an underlying, regulated market run by Kalshi, Inc.
+                        See
+                        how it works
+                    </p>
+                    <p class="emphasis10 articles-title">
+                        Hurricane articles
+                    </p>
+
+                    <p class="link-30"><a href="#hurricane-article-1" rel="modal:open">What will happen to your home at
+                            different
+                            hurricane categories?</a></p>
+                    <p class="link-30"><a href="#hurricane-article-2" rel="modal:open">What is "storm surge" and how can
+                            you
+                            protect your home from it?</a></p>
+                    <p class="link-30"><a href="#hurricane-article-3" rel="modal:open">Can your house hold up under a
+                            hurricane?
+                            Here are five things to do to minimize damage.</a></p>
+                    <p class="link-30"><a href="#hurricane-article-4" rel="modal:open">What to do before leaving your
+                            house for a
+                            hurricane evacuation</a></p>
+                </div>
+                <div>
+                    <img class="img-container" src="Image.svg" alt="Girl in a jacket">
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="box grey-background">
+            <h4 class="heading20">How tickets work</h4>
+            <div class="container" style="margin-top: 16px;">
+                <div class="container item">
+                    <div class="icon">
+                        <img src="ticket.svg" alt="Girl in a jacket">
+                    </div>
+
+                    <p class="body30">
+                        Tickets are simple to understand and offer limited risk. They vary in price and protection, so
+                        choose one that suits your needs and budget.
+                    </p>
+                </div>
+                <div class="right-divider"></div>
+                <div class="container item">
+                    <div class="icon">
+                        <img src="lock.svg" alt="Girl in a jacket">
+                    </div>
+
+                    <p class="body30">
+                        Stable is powered by a federally regulated financial exchange in the background. Your tickets
+                        and
+                        potential payout funds are held in a segregated account in bank from the moment of purchase.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box">
+
+            <div class="container">
+                <div class="item">
+                    <h3 class="heading30 heading-box">Lock in your gas prices for the rest of the year</h3>
+                    <p>
+                        Worried that the price of gas is going to keep going up this year? We offer tickets that pay out
+                        immediately if the price of gas goes up above a threshold nationally or in your state. You can
+                        use this payout to offset your extra gas costs. At the moment we offer national tickets that pay
+                        out 2x if the gas price ends up above $3.40 on the year.
+                    </p>
+                    <p class="emphasis10 articles-title">
+                        Gas articles
+                    </p>
+                    <p class="link-30"><a href="#gas-article-1" rel="modal:open">What causes gas prices to move</a></p>
+                    <p class="link-30"><a href="#gas-article-2" rel="modal:open">Why are gast prices going up right
+                            now?</a>
+                    </p>
+                    <p class="link-30"><a href="#gas-article-3" rel="modal:open">Can you predict if gas prices are going
+                            to
+                            go up
+                            or down in the next month?</a></p>
+                    <p class="link-30"><a href="#gas-article-4" rel="modal:open">Why do all the gas stations in my town
+                            have
+                            the
+                            same price day to day? Do they have a meeting or what?</a></p>
+                </div>
+
+                <div class="item">
+                    <img class="img-container" src="Image-3.svg" alt="Girl in a jacket">
+                </div>
+            </div>
+
+            <div class="container buy-section" style="margin-top: 32px;">
+                <div style="width: 432px;">
+                    <div class="container">
+                        <select name="city" class="city default-select" id="city">
+                            <option value="Orlando, FL">Orlando, FL</option>
+                            <option value="New York, NY">New York, NY</option>
+                        </select>
+                    </div>
+
+
+                    <p class="heading20">
+                        Gas tickets nearby
+
+                    </p>
+                    <img style="margin-top: 16px; height: 309px; max-width: 432px; object-fit: cover;"
+                        src="gas-tickets.svg" alt="Girl in a jacket">
+                </div>
+
+                <div class="buy-right-section">
+                    <p class="city-paragraph body20" style="padding-bottom: 4px;">
+                        Orlando, FL
+                    </p>
+                    <p class="heading10" style="padding-bottom: 4px;">
+                        Will it go above $3.40 in 2023?
+                    </p>
+                    <p class="body20">
+                        1 ticket
+                    </p>
+                    <hr>
+                    <div class="container space-between-row">
+                        <p class="body20">Cost</p>
+                        <p class="emphasis30">$200</p>
+                    </div>
+                    <div class="container space-between-row">
+                        <p class="body20">Payout</p>
+                        <p class="heading20 green10">$400</p>
+                    </div>
+
+                    <hr>
+                    <p class="body20">Payouts available immediately after the gas prices are announced by the AAA.
+                    </p>
+                    <button>Buy $200 supplemental coverage</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="box grey-background">
+
+            <div class="container">
+                <div class="item">
+                    <h3 class="heading30 heading-box">Protect your family against any major disasters in your area</h3>
+                    <p class="body30">
+                        Each part of the country has a list of disasters that might happen and bring damage, costs and
+                        headache for your family.We're launching disaster bundle tickets that will pay out if any major
+                        natural disaster happens in your city. Join the waitlist to get early access.
+                    </p>
+                </div>
+
+                <div class="item">
+                    <img class="img-container" src="major-disasters.svg" alt="Girl in a jacket">
+                </div>
+
+            </div>
+
+            <div class="container buy-section" style="margin-top: 32px;">
+                <div style="width: 432px;">
+                    <div class="container">
+                        <select name="city" class="city default-select" id="city">
+                            <option value="Orlando, FL">Orlando, FL</option>
+                            <option value="New York, NY">New York, NY</option>
+                        </select>
+                    </div>
+
+
+                    <p class="heading20">
+                        Natural disaster tickets nearby
+
+                    </p>
+                    <div>
+                        <img style="margin-top: 16px; height: 309px; max-width: 432px; object-fit: cover;"
+                            src="disasters-tickets.svg" alt="Girl in a jacket">
+                    </div>
+
+                </div>
+
+                <div class="buy-right-section">
+                    <p class="city-paragraph body20" style="padding-bottom: 4px;">
+                        Orlando, FL
+                    </p>
+                    <p class="heading10" style="padding-bottom: 4px;">
+                        Hurricane, tornado, flood, or earthquake in 2023
+                    </p>
+                    <p class="body20">
+                        1 ticket
+                    </p>
+                    <hr>
+                    <div class="container space-between-row">
+                        <p class="body20">Cost</p>
+                        <p class="emphasis30">$</p>
+                    </div>
+                    <div class="container space-between-row">
+                        <p class="body20">Payout</p>
+                        <p class="heading20 green10">$$$</p>
+                    </div>
+
+                    <hr>
+                    <p class="body20">Payouts available immediately after the natural disaster is verified by FEMA.
+                    </p>
+                    <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <p class="heading30" style="margin-bottom: 32px;">
+                <span>
+                    More tickets,
+                </span>
+                <span style="color: #D9322F;">
+                    coming soon!
+                </span>
+
+            </p>
+            <div class="container">
+
+                <div class="coming-soon">
+                    <img src="wildfires.svg" alt="Girl in a jacket">
+                    <div style="padding: 16px;">
+                        <p class="heading20">Wildfires</p>
+                        <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
+                    </div>
+
+                </div>
+                <div class="coming-soon">
+                    <img src="tornadoes.svg" alt="Girl in a jacket">
+                    <div style="padding: 16px;">
+                        <p class="heading20">Tornadoes</p>
+                        <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
+                    </div>
+
+                </div>
+                <div class="coming-soon">
+                    <img src="flood.svg" alt="Girl in a jacket">
+                    <div style="padding: 16px;">
+                        <p class="heading20">Flood</p>
+                        <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
+                    </div>
+
+                </div>
+                <div class="coming-soon">
+                    <img src="food.svg" alt="Girl in a jacket">
+                    <div style="padding: 16px;">
+                        <p class="heading20">Food prices</p>
+                        <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="box grey-background">
+            <h3 class="heading30">Testimonials & reviews</h3>
+            <div class="container" style="margin-bottom: 32px; margin-top: 32px;">
+                <i class="fa fa-info-circle"></i>
+                <p class="testmonials">Why are people flocking to this $50 product for supplemental hurricane coverage?
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="review-box">
+                    <div class="container">
+                        <img class="user-image" src="user-marcia.svg" alt="Girl in a jacket">
+                        <div>
+                            <p>Marcia Gomez</p>
+                            <p>Fort Myers, Florida</p>
+                            <img src="5-star.svg" alt="Girl in a jacket">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <p class="body30">
+                    “I bought hurricane tickets last year to help cover my deductibles. We all know Florida is a great
+                    state
+                    to live in but the hurricanes really can fuck you over. It started as a slow season but September
+                    came
+                    around and Ian came straight at us… I evacuated because I’m not one to play with fate. As soon as
+                    Ian
+                    was declared to hit Fort Myers as a category 4 hurricane I saw my payout made available in the
+                    website
+                    and proceeded to withdraw. Had the money in my bank account next day and used it to pay for hotels,
+                    food, and also a lot of damage we had in our house and garden. We are on a tight budget since my
+                    husband
+                    lost his job and I really don’t think we’d have been able to manage this so well without these
+                    hurricane
+                    tickets. I’m definitely buying them again this year!”
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="container">
+                <div class="review-box">
+                    <div class="container">
+                        <img class="user-image" src="james.svg" alt="Girl in a jacket">
+                        <div>
+                            <p>James Mitchell</p>
+                            <p>Imperial Valley, California</p>
+                            <img src="4-star.svg" alt="Girl in a jacket">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <p class="body30">
+                    “I bought some drought tickets last year. I have a small farm in Imperial Valley and there was a
+                    chance we were gonna get our water cut because of the levels on the Colorado River going down. We
+                    were lucky that it didn’t go down enough for my water to be cut, but I appreciated the peace of mind
+                    the ticket brought me. Will buy it again, but keep praying I don’t have to use it!”
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="container">
+                <div class="review-box">
+                    <div class="container">
+                        <img class="user-image" src="olivia.svg" alt="Girl in a jacket">
+                        <div>
+                            <p>Olivia Taylor</p>
+                            <p>Charleston, South Carolina</p>
+                            <img src="5-star.svg" alt="Girl in a jacket">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <p class="body30">
+                    “ I just bought my first couple of tickets this season to help with deductibles. It was super easy
+                    to
+                    buy them, and Rainy Day Market has been sending me useful alerts about the weather. Thankfully no
+                    payout yet, hoping these hurricanes stay away!”
+                </p>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="review-box">
+                    <div class="container">
+                        <img class="user-image" src="james-anderson.svg" alt="Girl in a jacket">
+                        <div>
+                            <p>James Anderson</p>
+                            <p>Bend, Oregon</p>
+                            <img src="5-star.svg" alt="Girl in a jacket">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <p class="body30">
+                    “I bought a ticket that would pay out if gas prices in Oregon hit more than $5 in 2022. I really
+                    thought about it as a worst case scenario insurance I was buying, I really thought there was no way
+                    that was going to happen. Looking back I don’t even know how I decided to really buy it, must have
+                    been god trying to help our family out… As soon as it hit $5 I got my payout and the support folks
+                    were very nice helping me withdraw the payout. My tickets paid out 20x, and I got around $1000 to
+                    help my family with gas costs. Will keep using this service. You never know what can happen.”
+                </p>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="review-box">
+                    <div class="container">
+                        <img class="user-image" src="sophie.svg" alt="Girl in a jacket">
+                        <div>
+                            <p>Sophie-Louise Roberts</p>
+                            <p>Perry, Florida</p>
+                            <img src="5-star.svg" alt="Girl in a jacket">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <p class="body30">
+                    “These tickets paid out for Hurricane Idalia and I was able to have peace of mind and money to
+                    evacuate my family fast. Thank you!”
+                </p>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <h3 class="heading30">Popular disaster relief organizations</h3>
+            <div class="container donation-box">
+                <img src="red-cross.svg" class="relief-image" alt="Girl in a jacket">
+                <img src="salvation-army.svg" class="relief-image" alt="Girl in a jacket">
+                <img src="united-way.svg" class="relief-image" alt="Girl in a jacket">
+                <img src="team-rubicon.svg" class="relief-image" alt="Girl in a jacket">
+                <img src="direct-relief.svg" class="relief-image" alt="Girl in a jacket">
+            </div>
+            <div class="container">
+                <div class="item">
+                    <p class="heading10 red10">
+                        Donate to reputable organizations
+                    </p>
+                    <p class="body30">
+                        There are many scams that pop up after a hurricane, so it is important to make sure that you are
+                        donating to a legitimate organization. You can check the charity's rating on websites like
+                        Charity
+                        Navigator or GuideStar.
+                    </p>
+                </div>
+                <div class="right-divider"></div>
+                <div class="item">
+                    <p class="heading10 red10">
+                        Donate what is most needed
+                    </p>
+                    <p class="body30">
+                        Relief organizations are often in need of specific items, such as food, water, cleaning
+                        supplies,
+                        and first-aid kits. You can check the organization's website to see what they are in need of.
+                    </p>
+                </div>
+                <div class="right-divider"></div>
+                <div class="item">
+                    <p class="heading10 red10">
+                        Donate wisely
+                    </p>
+                    <p class="body30">
+                        If you are donating money, make sure that you are donating to a charity that is efficient and
+                        uses
+                        its funds effectively. You can read reviews from other donors to see what their experiences have
+                        been.
+                    </p>
+                </div>
+            </div>
+            <div class="container donation">
+                <div class="item">
+                    <p class="heading20">
+                        Every donation helps, no matter how small.
+                    </p>
+                    <p class="body30">
+                        By donating to a hurricane disaster relief organization, you can help people affected by these
+                        storms rebuild their lives.
+                    </p>
+                </div>
+                <button class="waitlist-button" style="max-width: 209px;">Donate your ticket winning</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="hurricane-article-3" class="modal body30">
+        <p class="heading30">
+            Can your house hold up under a hurricane? Here are five things to do to minimize damage.
+        </p>
+        <p class="px16">
+            If you live in a hurricane-prone area, you know how nerve-wracking it can be when a storm is brewing. Your
+            home is your sanctuary, and you want to make sure it can stand up to the wrath of Mother Nature. So, let's
+            dive into five laid-back, yet crucial, steps you can take to minimize hurricane damage and keep your house
+            in tip-top shape.
+        </p>
+        <p class="heading10 px16">
+            1. Beef Up Your Home's Strength
+        </p>
+        <p class="px16">
+            First things first, let's talk about reinforcing your home's structure. Take a stroll around your property
+            and give it a good once-over.
+        </p>
+        <ul>
+            <li>Top-Notch Roof: Make sure your roof is in good shape and properly anchored to the rest of
+                your house.
+                Consider adding hurricane straps or clips for extra security.</li>
+            <li>Window and Door Love: Install impact-resistant windows and doors if you can swing it. If
+                not, invest in
+                sturdy hurricane shutters. Also, give those doors and windows a good seal to keep water out.</li>
+            <li>Walls That Stand Tall: Strengthen your exterior walls with some bracing. Ensure that your
+                siding or
+                masonry
+                is firmly attached to the frame.</li>
+        </ul>
+
+        <p class="heading10 px16">
+            2. Get Elevation-Savvy
+        </p>
+        <p class="px16">
+            If you're in an area prone to flooding, it's time to think about lifting your house. Elevating your home can
+            save you a lot of headache (and heartache) when the waters rise.
+        </p>
+        <ul>
+            <li> Pilings or Stilts: Consider lifting your home up on pilings or stilts. It'll keep it above the
+                floodwaters. Make
+                sure you're following local elevation regulations.</li>
+            <li>Flood Vents: These nifty vents in your foundation walls let floodwater flow through, taking the pressure
+                off
+                your home's structure.</li>
+        </ul>
+
+
+
+
+        <p class="heading10 px16">
+            3. Batten Down the Hatches
+        </p>
+        <p class="px16">
+            You know those outdoor items that make your home feel cozy and inviting? Well, during a hurricane, they can
+            turn
+            into flying projectiles. So, secure or stow away stuff like patio furniture, grills, and garden decorations.
+        </p>
+        <ul>
+            <li>Trim Those Trees: Give your trees a trim to minimize the risk of falling branches or even whole trees
+                during a
+                storm.</li>
+        </ul>
+
+
+
+
+
+
+        <p class="heading10 px16">
+            4. Craft a Hurricane Game Plan
+        </p>
+        <p class="px16">
+            Having a plan in place is like having a superhero cape for your family. It's your hurricane preparedness
+            plan,
+            and it's vital for your safety and your home's well-being.
+        </p>
+        <ul>
+            <li>Evacuation Strategy: Know your escape routes and destinations. When authorities say "go," be ready to
+                roll.</li>
+            <li>Emergency Kit: Gather up a stash of essentials – food, water, flashlights, batteries, first aid gear,
+                and
+                important documents. Think of it as your hurricane survival kit.</li>
+            <li>Stay Connected: Arrange a communication plan with your family so you can stay in touch during the storm.
+                Get a
+                battery-powered or hand-crank radio for weather updates.</li>
+        </ul>
+
+        <p class="heading10 px16">
+            5. Insure for the Unexpected
+        </p>
+        <p class="px16">
+            Standard homeowners' insurance usually doesn't cover flood damage. So, make sure you're protected
+            financially by getting flood insurance from the National Flood Insurance Program (NFIP) or a private
+            insurer. You can also buy Rainy Day Market hurricane tickets to help cover some of the costs and damage
+            associated with a hurricane. The tickets are paid out immediately after a hurricane happens so you can use
+            those funds to cover deductibles, whatever damages your insurance doesn’t cover, evacuation costs, and so
+            on.
+        </p>
+        <p class="px16">
+            Your home is more than just bricks and beams; it's where memories are made. Taking these easygoing steps to
+            hurricane-proof your house can give you peace of mind and ensure it stands strong when a storm rolls in. So,
+            kick back, relax, and know that you've got your home's back, rain or shine!
+        </p>
+    </div>
+
+    <div id="hurricane-article-2" class="modal body30">
+        <p class="heading30">
+            What is "storm surge" and how can you protect your home from it?
+        </p>
+        <p class="px16">
+            Storm surge is a sudden and abnormal rise in sea level during a hurricane or tropical storm, resulting from
+            the combination of strong onshore winds and low atmospheric pressure. It is one of the most dangerous and
+            potentially deadly aspects of a hurricane, as it can cause widespread coastal flooding and pose a
+            significant threat to life and property. Storm surge can inundate coastal areas, including homes and
+            infrastructure, leading to devastating consequences.
+
+            Here's how storm surge works and some ways to protect your home from it:
+
+        </p>
+        <p class="heading10 px16">
+            1. How Storm Surge Works
+        </p>
+        <ul>
+            <li>Wind and Pressure: Storm surge occurs when strong winds from a hurricane push water toward the coast.
+                The low atmospheric pressure in the storm's center also contributes to the rise in sea level. These two
+                factors combine to create a dome of water that moves ashore.</li>
+            <li>Topography: The shape of the coastline and the underwater features of the seabed can amplify or mitigate
+                the effects of storm surge. Narrow bays, shallow coastal areas, and inlets can experience more
+                significant surges.</li>
+            <li>Timing: Storm surge typically occurs before the hurricane's center makes landfall, meaning that coastal
+                areas can experience flooding well in advance of the storm's strongest winds and rain.</li>
+        </ul>
+
+        <p class="heading10 px16">
+            2. How to Protect Your Home from Storm Surge
+        </p>
+        <ul>
+            <li> Evacuate if Advised: The most critical step is to heed evacuation orders issued by local authorities.
+                If you're in an area at risk of storm surge, leave your home and seek higher ground.</li>
+            <li>Elevate Your Home: If you live in a hurricane-prone area, consider elevating your home on pilings or
+                stilts to reduce the risk of flood damage. Building codes in many coastal regions require elevated
+                construction in vulnerable areas.</li>
+            <li>Flood Barriers and Seals: Install flood barriers, flood panels, or watertight seals around doors and
+                windows to prevent water from entering your home.
+            </li>
+            <li>Reinforce Your Foundation: Ensure that your home's foundation is strong and well-anchored to withstand
+                the force of floodwaters. Reinforce it with pilings or other flood-resistant construction methods.
+            </li>
+            <li>Elevate Utilities: Elevate electrical systems, HVAC units, and other utilities to prevent water damage
+                and electrical hazards during a flood.
+            </li>
+            <li>Storm Shutters: Install storm shutters or impact-resistant windows to protect against wind-driven
+                debris.</li>
+            <li>Secure Outdoor Items: Secure or bring inside outdoor furniture, grills, and other items that could
+                become projectiles in high winds.</li>
+            <li>Trim or remove dead, damaged, or rotting trees and limbs: The high winds that sometimes happen with
+                storm surges can cause tree branches or whole trees to fall. To be fully safe, you should make sure that
+                your home is at least one tree length away from the nearest tree</li>
+            <li>Reinforce the garage door: Purchase reinforced garage doors that can withstand the force of water to
+                help prevent water going into your home.</li>
+            <li>Seal cracks and gaps: This will help prevent water from getting into your home. Make sure to use
+                waterproof sealant! Also make sure to seal all windows.</li>
+            <li>Flood Insurance: Purchase flood insurance through the National Flood Insurance Program (NFIP) or a
+                private insurer. Standard homeowners' insurance policies typically do not cover flood damage.</li>
+        </ul>
+        <p class="px16 body30">Remember that storm surge is a life-threatening event, and property can often be
+            replaced, but
+            lives cannot. Always prioritize your safety and the safety of your family by following evacuation orders and
+            seeking shelter in a safe location during a hurricane with the potential for storm surge. Also make sure you
+            have an emergency kit and an emergency plan in place.
+
+
+        </p>
+        <p class="px16 body30"> Rainy Day Market’s hurricane tickets help you get immediately accessible funds in case
+            of a storm surge
+            because of a hurricane. You can use the payouts from the ticket (which you’ll get immediately!) to cover any
+            evacuation costs, deductibles, emergency costs and so on.</p>
+
+    </div>
+
+    <div id="hurricane-article-1" class="modal body30">
+        <p class="heading30">
+            What will happen to your home at different hurricane categories?
+        </p>
+        <p class="px16">
+            The impact of a hurricane on a home structure can vary significantly depending on the hurricane's category,
+            the construction of the home, its location, and other factors. Here's a general overview of what can happen
+            to home structures when they're hit by hurricanes of different categories:
+
+        </p>
+        <p class="heading10 px16">
+            Category 1 (74-95 mph) - Minimal Damage:
+        </p>
+        <ul>
+            <li>Well-built homes may experience minimal damage, such as loose roof shingles, siding, or minor flooding.
+            </li>
+            <li>Poorly constructed or older homes may sustain more significant damage, including roof damage and some
+                structural damage.
+            </li>
+        </ul>
+
+        <p class="heading10 px16">
+            Category 2 (96-110 mph) - Moderate Damage:
+        </p>
+        <ul>
+            <li> Well-built homes can still withstand this category with some damage to roofs, windows, and doors.</li>
+            <li>Older or poorly constructed homes may experience more extensive damage, including roof failure and
+                potential structural damage.</li>
+        </ul>
+
+        <p class="heading10 px16">Category 3 (111-129 mph) - Extensive Damage:</p>
+        <ul>
+            <li>Even well-built homes are likely to experience significant damage, including roof and structural damage.
+            </li>
+            <li>Mobile homes can be completely destroyed.Mobile homes can be completely destroyed.</li>
+            <li>Flooding can be a major concern, especially in coastal areas.</li>
+        </ul>
+
+        <p class="heading10 px16">Category 4 (130-156 mph) - Severe Damage:</p>
+        <ul>
+            <li>Well-built homes may still experience severe damage, including roof failure and structural damage.</li>
+            <li>Many older or weaker structures can be destroyed.</li>
+            <li>Widespread flooding is a significant threat.</li>
+        </ul>
+
+        <p class="heading10 px16">Category 5 (157 mph or higher) - Catastrophic Damage:</p>
+        <ul>
+            <li>Homes, even well-constructed ones, can be completely destroyed, leaving only the foundation.</li>
+            <li>Widespread and catastrophic flooding is almost certain in coastal areas.</li>
+            <li>Debris and projectiles from high winds can cause additional damage to structures.</li>
+        </ul>
+
+        <p class="px16 body30">It's important to note that the specific impact of a hurricane can also be influenced by
+            factors such as storm surge, the angle of approach, the terrain, and the quality of construction materials
+            and methods used in the home. Building codes and regulations in hurricane-prone areas often require homes to
+            be designed and constructed to withstand the forces of hurricanes to varying degrees, with stricter
+            standards in higher-risk areas.
+
+
+        </p>
+        <p class="px16 body30"> Residents in hurricane-prone regions are advised to have hurricane preparedness plans in
+            place, including reinforcing their homes where possible, securing loose objects, and having an evacuation
+            plan in case the storm threatens their safety. Additionally, listening to local authorities and heeding
+            evacuation orders is crucial for personal safety during a hurricane event. </p>
+
+        <p class="px16 body30"> Rainy Day Market’s hurricane tickets were created to help you bridge the gap between the
+            costs you incur when a hurricane hits and your insurance: you can use it to help cover your deductibles,
+            emergency evacuation costs, among other things. The tickets have an immediate payout, so you’ll have access
+            to your funds as soon as the hurricane is confirmed.</p>
+    </div>
+
+    <div id="hurricane-article-4" class="modal body30">
+        <p class="heading30">
+            What to do before leaving your house for a hurricane evacuation
+        </p>
+        <p class="px16">
+            Locking your house and evacuating during a hurricane can be a very stressful time. You need to act fast and
+            make sure you and your family follow your evacuation plan diligently. Here is a checklist of things you must
+            do before leaving your house to evacuate:
+
+        </p>
+        <p class="heading10 px16">
+            1. Secure Important Documents:
+        </p>
+        <ul>
+            <li>Place important documents (ID, passports, insurance policies, birth certificates, etc.) in a waterproof
+                container or bag. Consider making digital copies as well.</li>
+        </ul>
+        <p class="heading10 px16">
+            2. Turn Off Utilities:
+        </p>
+        <ul>
+            <li>Shut off the main gas valve to prevent gas leaks.</li>
+            <li>Turn off the main water supply to avoid water damage from broken pipes.</li>
+            <li>Turn off the electricity at the main circuit breaker or fuse box.</li>
+        </ul>
+        <p class="heading10 px16">
+            3. Unplug Appliances:
+        </p>
+        <ul>
+            <li>Unplug all non-essential appliances and electronics to prevent electrical surges if the power goes out
+                or is restored unexpectedly.</li>
+        </ul>
+        <p class="heading10 px16">
+            4. Secure Windows and Doors:
+        </p>
+        <ul>
+            <li>Lock all windows and doors securely.</li>
+            <li>Install hurricane shutters or board up windows, if possible.</li>
+        </ul>
+        <p class="heading10 px16">
+            5. Raise Valuables:
+        </p>
+        <ul>
+            <li>Elevate valuable items, electronics, and furniture off the floor to minimize potential flood damage.
+            </li>
+        </ul>
+        <p class="heading10 px16">
+            6. Secure Outdoor Items:
+        </p>
+        <ul>
+            <li>Bring in or secure outdoor furniture, grills, and decorations to prevent them from becoming projectiles
+                in high winds.</li>
+        </ul>
+        <p class="heading10 px16">
+            7. Check Smoke and Carbon Monoxide Detectors:
+        </p>
+        <ul>
+            <li>Ensure smoke detectors and carbon monoxide detectors are functioning properly.</li>
+        </ul>
+        <p class="heading10 px16">
+            8. Set Thermostat:
+        </p>
+        <ul>
+            <li>Adjust your thermostat to an energy-saving or hurricane-specific setting to reduce energy consumption.
+            </li>
+        </ul>
+        <p class="heading10 px16">
+            9. Lock All Interior Doors:
+        </p>
+        <ul>
+            <li>Lock interior doors to help prevent drafts and structural damage in case of strong winds.</li>
+        </ul>
+        <p class="heading10 px16">
+            10. Notify a Trusted Contact and your Neighbors:
+        </p>
+        <ul>
+            <li>Inform a trusted friend or family member about your evacuation plans, including your destination and
+                estimated arrival time.</li>
+            <li>Inform your neighbors that you are evacuating and provide them with your contact information in case of
+                emergencies.</li>
+        </ul>
+        <p class="heading10 px16">
+            11. Secure Pets:
+        </p>
+        <ul>
+            <li>Safely confine or take your pets with you. Ensure they have identification and necessary supplies.</li>
+        </ul>
+        <p class="heading10 px16">
+            12. Gather Emergency Kit:
+        </p>
+        <ul>
+            <li>Grab your pre-packed emergency kit, including food, water, medications, and essential supplies.</li>
+        </ul>
+        <p class="heading10 px16">
+            13. Double-Check Evacuation Route:
+        </p>
+        <ul>
+            <li>Review your evacuation route and have a map or GPS device ready for navigation.
+            </li>
+        </ul>
+        <p class="heading10 px16">
+            14. Lock Up:
+        </p>
+        <ul>
+            <li>Lock all entry and exit points, including garage doors. </li>
+        </ul>
+        <p class="heading10 px16">
+            15. Check for Hazards:
+        </p>
+        <ul>
+            <li>Identify and eliminate potential hazards or items that could cause damage during the storm.</li>
+        </ul>
+        <p class="heading10 px16">
+            16. Test Alarms:
+        </p>
+        <ul>
+            <li>Check that your home security system, if you have one, is armed. - Ensure your car alarm is activated if
+                you're leaving your vehicle behind.</li>
+        </ul>
+        <p class="heading10 px16">
+            17. Inspect the Yard:
+        </p>
+        <ul>
+            <li>Trim trees and bushes that could potentially fall onto your home or vehicles.</li>
+        </ul>
+        <p class="heading10 px16">
+            18. Store Keys:
+        </p>
+        <ul>
+            <li>Keep a spare set of house and car keys with you, and leave another set with a trusted neighbor or
+                friend.</li>
+        </ul>
+        <p class="heading10 px16">
+            19. Verify Emergency Contacts:
+        </p>
+        <ul>
+            <li>Ensure that you have emergency contact information, such as local authorities and utility companies,
+                readily available.</li>
+        </ul>
+    </div>
+
+    <div id="gas-article-1" class="modal body30">
+        <p class="heading30">
+            What causes gas prices to move?
+        </p>
+        <p class="px16">
+            Gas prices can fluctuate due to a variety of factors, both on a global and local scale. These factors can
+            interact with each other, leading to complex and sometimes rapid changes in gas prices. Here are some of the
+            key factors that influence gas prices:
+
+        </p>
+        <p class="heading10 px16">
+            1. Crude Oil Prices
+        </p>
+
+        <p class="body30 px16">
+            The most significant factor in determining gas prices is the cost of crude oil, as
+            gasoline is refined from crude oil. Global supply and demand for crude oil play a major role in its pricing.
+            Events such as geopolitical conflicts, production cuts by oil-producing countries (OPEC), and changes in
+            global oil production can all impact crude oil prices.
+        </p>
+
+
+        <p class="heading10 px16">
+            2. Supply and Demand
+        </p>
+        <p class="body30 px16">
+            The basic principle of supply and demand applies to gas prices. When demand for gasoline is high (e.g.,
+            during
+            the summer travel season), and supply is limited, prices tend to rise. Conversely, when demand is low, or
+            there's an oversupply of gasoline, prices may fall.
+        </p>
+
+
+        <p class="heading10 px16">
+            3. Refining Costs and Capacity
+        </p>
+        <p class="body30 px16">
+            Gasoline must be refined from crude oil, and disruptions or maintenance at refineries can affect supply.
+            Additionally, the refining process itself can be affected by various factors, including changes in
+            environmental
+            regulations and the availability of specific refining capacity.
+        </p>
+
+
+        <p class="heading10 px16">
+            4. Taxes
+        </p>
+        <p class="body30 px16">
+            Federal, state, and local taxes can significantly impact gas prices. These taxes vary from one location to
+            another and can change over time due to legislative decisions.
+        </p>
+
+
+        <p class="heading10 px16">
+            5. Exchange Rates
+        </p>
+        <p class="body30 px16">
+            Since oil is traded globally in U.S. dollars, fluctuations in exchange rates can impact the cost of oil
+            imports,
+            which can, in turn, affect gas prices.
+        </p>
+
+
+        <p class="heading10 px16">
+            6. Transportation and Distribution Costs
+        </p>
+        <p class="body30 px16">
+            The cost of transporting gasoline from refineries to gas stations can vary due to factors such as fuel
+            efficiency, labor costs, and infrastructure maintenance.
+        </p>
+
+
+        <p class="heading10 px16">
+            7. Weather Events
+        </p>
+        <p class="body30 px16">
+            Natural disasters, hurricanes, and extreme weather can disrupt oil production, refining, and distribution,
+            leading to temporary spikes in gas prices, especially in regions directly affected by these events.
+        </p>
+
+
+        <p class="heading10 px16">
+            8. Speculation
+        </p>
+        <p class="body30 px16">
+            Financial markets and speculative trading in oil futures can influence oil prices. Traders and investors
+            often
+            react to news and events that may or may not have a direct impact on the actual supply and demand of oil.
+        </p>
+
+
+        <p class="heading10 px16">
+            9. Government Policies
+        </p>
+        <p class="body30 px16">
+            Government policies and regulations, such as emissions standards and fuel economy requirements, can
+            influence
+            the type of gasoline produced and the overall supply and demand for different types of fuel.
+        </p>
+
+
+        <p class="heading10 px16">
+            10. Competition
+        </p>
+        <p class="body30 px16">
+            Gasoline prices can also be influenced by local competition among gas stations. In areas with more gas
+            stations,
+            prices may be lower due to competition, whereas in more remote areas with limited options, prices may be
+            higher.
+        </p>
+
+        <p class="body30 px16"> It's important to note that these factors can vary in importance depending on the region
+            and time frame you're considering. Gas prices can be highly volatile and subject to rapid changes due to a
+            combination of these factors. Additionally, the interplay between global and local factors can make
+            predicting gas price movements complex.</p>
+    </div>
+
+    <div id="gas-article-2" class="modal body30">
+        <p class="heading30">
+            Why are gast prices going up right now?
+        </p>
+        <p class="px16">
+            As we hit the summer of 2023, consumers across the globe are feeling the heat in more ways than one,
+            especially at the gas pump. Gas prices have been on a rollercoaster ride, and the reasons behind these
+            fluctuations are as diverse as the factors influencing our world today.
+
+        </p>
+        <p class="heading10 px16">
+            Global Players: Saudi Arabia, China, and OPEC
+        </p>
+
+        <p class="body30 px16">
+            At the forefront of the recent gas price surge is Saudi Arabia, often recognized as the world's largest oil
+            exporter. In a strategic move, the kingdom announced a substantial reduction in oil production, slashing at
+            least 1 million barrels per day through July. This decision follows the lead of the Organization of the
+            Petroleum Exporting Countries (OPEC), which, in April, declared a cut of 1.6 million barrels per day in
+            global
+            oil production.
+        </p>
+
+        <p class="body30 px16">
+            OPEC, a coalition of major oil-producing nations, including Saudi Arabia, Iran, Iraq, and Nigeria,
+            collectively wields considerable influence, supplying approximately 40% of the world's crude oil. Their
+            goal? To elevate the price of oil by limiting its global supply, effectively using their dominance to
+            manipulate prices. Recently, OPEC extended its production cuts by an additional 1.4 million barrels per day,
+            maintaining this strategy through the end of 2024.
+        </p>
+
+        <p class="body30 px16">
+            In tandem with these global maneuvers, China's recovery from the COVID-19 pandemic is another critical
+            factor. After enforcing some of the world's strictest lockdown measures since 2020, China began reopening
+            its doors in late 2022. However, logistical challenges, such as expensive international flights and visa
+            reinstatement delays, have slowed the process. As China's 1.4 billion citizens gradually return to their
+            daily routines, experts anticipate heightened demand for fuel, inevitably contributing to rising gas prices.
+        </p>
+
+        <p class="body30 px16">
+            Other influences in the mix include inflation, geopolitical tensions such as the U.S. ban on Russian oil
+            imports due to the conflict in Ukraine, and the onset of summer, which traditionally boosts travel and road
+            trips, further amplifying fuel demand.
+        </p>
+
+
+        <p class="heading10 px16">
+            The Heat Is On: Extreme Weather Impact
+        </p>
+        <p class="body30 px16">
+            Adding to this complex equation is the relentless wave of extreme heat blanketing the nation. This scorching
+            weather isn't just about discomfort; it's affecting the very infrastructure of our energy supply. AAA
+            estimates
+            that extreme heat has forced the shutdown of 500,000 barrels per day of refining capacity this summer.
+            Petroleum
+            engineers reveal that when temperatures hover around 100 degrees Fahrenheit, running refineries at maximum
+            capacity becomes exceedingly challenging.
+        </p>
+        <p class="body30 px16">
+            Furthermore, the heat dome responsible for these sweltering conditions in the southern United States is
+            expected
+            to expand its grip across more of the central part of the country in the coming weeks, potentially
+            exacerbating
+            the strain on energy infrastructure.
+        </p>
+
+
+        <p class="heading10 px16">
+            Stormy Seas: Hurricane Season Arrives
+        </p>
+        <p class="body30 px16">
+            As if extreme heat weren't enough, the annual hurricane season has made its entrance, introducing another
+            layer
+            of uncertainty into the energy equation. Hurricane Hilary, though downgraded to a tropical storm, recently
+            made
+            landfall, impacting southern California, Nevada, and Arizona. However, it's not just the storms themselves
+            but
+            also the heightened risk they bring that is concerning. NOAA forecasters have increased the likelihood of an
+            above-normal Atlantic hurricane season from 30% in May to 60% this month.
+        </p>
+        <p class="body30 px16">
+            The U.S. remains particularly vulnerable to supply disruptions in the event of a significant storm striking
+            between Corpus Christi, Texas, and the Beaumont-Port Arthur, Texas, coastline, an area home to numerous
+            refineries.
+        </p>
+
+        <p class="body30 px16">
+            In conclusion, gas prices are currently navigating a perfect storm of factors. From global power plays
+            involving
+            Saudi Arabia and OPEC to China's recovery, extreme heatwaves, and the unpredictability of hurricane season,
+            consumers are left to grapple with the consequences at the pump. As we move forward into the summer months,
+            it's
+            clear that understanding the dynamics behind these price fluctuations will be more critical than ever for
+            consumers and industries alike.
+        </p>
+
+
+    </div>
+
+    <div id="gas-article-3" class="modal body30">
+        <p class="heading30">
+            Can you predict if gas prices are going to go up or down in the next month?
+        </p>
+        <p class="px16">
+            Predicting the precise movement of gas prices is really hard because it depends on various complex factors,
+            including global oil markets, geopolitical events, and economic conditions. However, there are some
+            strategies and indicators that can help you predict what’s going to happen with your fuel costs:
+
+        </p>
+        <p class="heading10 px16">
+            Track Crude Oil Prices
+        </p>
+
+        <p class="body30 px16">
+            Crude oil prices have a direct impact on gasoline costs. Monitoring these prices by regularly checking
+            reliable
+            financial news websites, using mobile apps that provide real-time oil price updates, or setting up price
+            alerts
+            for significant changes can help you predict what’s going to happen to the price of gas. Usually if oil
+            prices
+            go up, gas prices are quick to follow!
+        </p>
+
+
+        <p class="heading10 px16">
+            Analyze Supply and Demand
+        </p>
+        <p class="body30 px16">
+            Understand the balance between oil supply and demand. Keep an eye on global oil production figures, events
+            affecting oil-producing regions, and shifts in demand patterns. Look for trends or sudden changes that could
+            signal potential price shifts. You can also do this at a local level: are you seeing more tourists in your
+            town?
+            Are you seeing any signs that more people will want to buy gas close to you?
+        </p>
+
+        <p class="heading10 px16">
+            Seasonal Patterns
+        </p>
+        <p class="body30 px16">
+            Recognize the seasonal trends in gas prices. Typically, prices rise during the summer months due to
+            increased
+            travel and drop during the winter when demand lessens. Consider how these patterns might affect next month's
+            prices.
+        </p>
+
+        <p class="heading10 px16">
+            Stay Informed About Geopolitics
+        </p>
+        <p class="body30 px16">
+            Keep up with geopolitical events that could disrupt oil supplies or affect major oil-producing countries.
+            Conflicts, sanctions, or political instability can lead to supply disruptions and higher oil prices. Usually
+            these make major news, so you’ll probably read about this in social media or your favorite news TV show.
+        </p>
+
+        <p class="heading10 px16">
+            Economic Indicators
+        </p>
+        <p class="body30 px16">
+            Pay attention to economic indicators such as inflation rates, exchange rates, and overall economic health. A
+            strong economy often leads to greater oil demand, while economic downturns can reduce it.
+        </p>
+
+        <p class="heading10 px16">
+            Government Policies and Regulations
+        </p>
+        <p class="body30 px16">
+            Research any upcoming government policy changes or regulatory shifts that could influence oil prices. Tax
+            adjustments, emissions standards, and energy-related policies can all have an impact.
+        </p>
+
+        <p class="heading10 px16">
+            Weather Considerations
+        </p>
+        <p class="body30 px16">
+            Factor in weather-related events, particularly if you're in an area prone to hurricanes or other natural
+            disasters. These events can disrupt oil production and refining, causing temporary price spikes.
+        </p>
+
+        <p class="heading10 px16">
+            Consult Energy Reports
+        </p>
+        <p class="body30 px16">
+            Utilize energy market reports and forecasts provided by organizations like the U.S. Energy Information
+            Administration (EIA) or the International Energy Agency (IEA). These reports offer valuable insights into
+            market
+            trends and can aid in your predictions.
+        </p>
+
+        <p class="heading10 px16">
+            Local Market Insights
+        </p>
+        <p class="body30 px16">
+            Understand that gas prices can vary significantly by region due to local factors like taxes, transportation
+            costs, and competition among gas stations. Investigate your local market to gain insights into potential
+            price
+            movements.
+        </p>
+
+        <p class="heading10 px16">
+            Use Forecasting Tools
+        </p>
+        <p class="body30 px16">
+            Explore online tools and apps that provide gas price forecasts based on historical data and current market
+            conditions. While these forecasts aren't foolproof, they can serve as valuable resources for your analysis.
+        </p>
+
+        <p class="body30 px16">
+            Remember, forecasting oil and gas prices is inherently uncertain, and various unforeseen factors can
+            influence them. Your goal should be to make informed decisions based on available information, but also
+            remain adaptable to changing market conditions. This approach will help you better anticipate and manage
+            your fuel expenses in the months ahead.
+        </p>
+
+
+
+
+    </div>
+
+    <div id="gas-article-4" class="modal body30">
+        <p class="heading30">
+            Why do all the gas stations in my town have the same price day to day? Do they have a meeting or what?
+        </p>
+        <p class="px16">
+            So, you might have noticed that gas stations in your town often seem to have eerily similar prices, like
+            they're all in cahoots or something. But don't worry, they're not having secret meetings to coordinate their
+            prices. There's actually a bunch of everyday reasons why gas prices tend to be pretty close among different
+            stations in the same area.
+
+        </p>
+        <p class="heading10 px16">
+            Competition
+        </p>
+        <p class="body30 px16">
+            First off, gas stations are like hawks when it comes to checking out what their neighbors
+            are charging. If one station drops its prices, you can bet your bottom dollar that others nearby will
+            follow suit. And when one station decides to hike up prices, you guessed it, their competitors might
+            just do the same to rake in more profit. It's all about trying to get you to pull into their pumps.
+        </p>
+
+        <p class="heading10 px16">
+            Market Dynamics
+        </p>
+        <p class="body30 px16">
+            Then there's the whole supply and demand thing. Gas prices can be influenced by factors
+            like how much gas is available, what it costs to get it to the station, and taxes slapped on top. These
+            factors usually hit all the stations in the area in pretty much the same way, so you'll see uniform
+            price changes.
+        </p>
+
+
+        <p class="heading10 px16">
+            Consumer Behavior
+        </p>
+        <p class="body30 px16">
+            We're creatures of habit, right? Most of us tend to go for the nearest or cheapest
+            gas station. That's why stations close to each other often keep their prices competitive. They know
+            you're looking for the best deal and don't want you to drive past their place.
+        </p>
+
+
+        <p class="heading10 px16">
+            Franchise Agreements
+        </p>
+        <p class="body30 px16">
+            Some gas stations belong to bigger franchises or chains. These guys might have set
+            pricing rules for all their locations, which can make prices look the same across the board.
+        </p>
+
+
+        <p class="heading10 px16">
+            Regulations
+        </p>
+        <p class="body30 px16">
+            Lastly, there are those pesky rules and agreements in some places that stop gas stations
+            from going all-out price war on each other. These rules help keep things stable in the area.
+        </p>
+
+        <p class="body30 px16">
+
+            But here's the kicker – there are some extra factors you might want to keep an eye out for. For instance,
+            some gas stations have convenience stores on-site, and these are responsible for most of their profits. To
+            get you in the door, they might price their gas a bit lower. Also, the brand of gas can make a difference.
+            Exxon might be pricier than Shell, but if you're getting a higher-quality fuel, it could be worth the extra
+            cents. And don't forget, if you're driving between cities, different places often have different
+            regulations, which can mean you see a difference in the price tag.
+
+        </p>
+
+        <p class="body30 px16">
+            So, while gas stations aren't secretly plotting to squeeze every last cent out of your pocket, it's still
+            smart to shop around. Small differences can pop up, and you might just stumble upon a station with a few
+            cents off the gallon, which can add up over time. Happy fueling!
+        </p>
+
+
+    </div>
+</body>
