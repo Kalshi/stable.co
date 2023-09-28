@@ -3,493 +3,163 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='index.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <style>
-        @font-face {
-            font-family: Inter;
-            src: url(sansation_light.woff);
-        }
-
-        /* TAGS */
-        body {
-            font-family: Inter;
-            margin: 0px;
-        }
-
-        p {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        img {
-            display: block;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-block-start: 0px;
-            margin-block-end: 0px;
-        }
-
-        button {
-            border-radius: var(--radius-md, 4px);
-            background: #D9322F;
-            display: flex;
-            min-width: var(--cta-sm, 40px);
-            min-height: var(--cta-sm, 40px);
-            padding: var(--xs, 8px) var(--sm, 12px);
-            justify-content: center;
-            align-items: center;
-            border: 1px solid red;
-            gap: var(--xs, 8px);
-            align-self: stretch;
-            color: white;
-            margin-top: 16px;
-            width: 100%;
-        }
-
-        a {
-            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
-            font-variant-numeric: lining-nums tabular-nums slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 24px;
-            /* 150% */
-            letter-spacing: -0.16px;
-            text-decoration-line: underline;
-        }
-
-        select {
-            /* appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none; */
-            border: none;
-            /* needed for Firefox: */
-            overflow: hidden;
-            color: white;
-            background-color: transparent;
-
-        }
-
-        hr {
-            margin-block-start: 16px;
-            margin-block-end: 16px;
-            height: 1px;
-            color: var(--light-mode-fill-40, rgba(0, 0, 0, 0.10));
-        }
-
-        /* CLASSES */
 
 
-        .container {
-            display: flex;
-
-        }
-
-        .item {
-            flex-basis: 100%;
-        }
-
-        .right-divider {
-            border-right: 1px solid rgba(0, 0, 0, 0.10);
-            margin-left: 16px;
-            margin-right: 16px;
-        }
-
-
-
-        .review-box {
-            min-width: 320px;
-        }
-
-        .user-image {
-            margin-right: 16px;
-        }
-
-        .relief-image {
-            margin-right: 48px;
-        }
-
-        .buy-section {
-            background: #F6F0E5;
-            padding: 16px;
-            max-width: 768px;
-            margin: auto;
-        }
-
-
-        .icon {
-            max-width: 32;
-            max-height: 32;
-            padding-right: 16px;
-        }
-
-        .heading-box {
-            max-width: 480px;
-        }
-
-        .grey-background {
-            background: rgba(0, 0, 0, 0.03);
-
-        }
-
-        .articles-title {
-            padding-top: 16px;
-        }
-
-        .box {
-            padding-top: 48px;
-            padding-bottom: 48px;
-            padding-left: 120px;
-            padding-right: 120px;
-        }
-
-        .buy-box {
-            padding-top: 48px;
-        }
-
-        .donation-box {
-            padding-top: 32px;
-            padding-bottom: 32px;
-        }
-
-        .preapred-box {
-            background-color: rgba(217, 50, 47, 1);
-        }
-
-        .prepared-title {
-            min-width: 552px;
-            padding-right: 32px;
-        }
-
-        .prepared-image {
-            padding-right: 8px;
-        }
-
-        .prepared-text {
-            color: white;
-        }
-
-        .img-container {
-            padding-left: 32px;
-        }
-
-        .prepared-select {
-            color: #EEDEBF;
-            font-variant-numeric: lining-nums proportional-nums stacked-fractions slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            font-family: Inter;
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 650;
-            line-height: 30px;
-            text-decoration-line: underline;
-        }
-
-        .default-select {
-            color: #D9322F;
-            font-variant-numeric: lining-nums tabular-nums slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            /* Emphasis/20 */
-            font-family: Inter;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 20px;
-            /* 142.857% */
-        }
-
-        .buy-right-section {
-            background-color: white;
-            padding: 16px;
-            max-width: 288px;
-            margin-left: 16px;
-        }
-
-        .space-between-row {
-            justify-content: space-between;
-            padding-bottom: 4px;
-        }
-
-        .coming-soon {
-            margin-right: 16px;
-            background: #F6F0E5;
-        }
-
-        .donation {
-            border-radius: var(--radius-md, 4px);
-            background: #F6F0E5;
-            padding: 16px;
-            margin-top: 32px;
-        }
-
-        .px16 {
-            padding-top: 16px;
-        }
-
-        /* TEXT STYLES */
-
-        .body30 {
-            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
-            font-variant-numeric: lining-nums tabular-nums slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            /* Body/30 */
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 24px;
-            /* 150% */
-            letter-spacing: -0.16px;
-        }
-
-        .emphasis10 {
-            color: #D9322F;
-            font-variant-numeric: lining-nums tabular-nums slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            /* Emphasis/10 */
-            font-family: Inter;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 18px;
-            /* 150% */
-        }
-
-        .heading30 {
-            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
-            font-variant-numeric: lining-nums proportional-nums stacked-fractions slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            /* Heading/30 */
-            font-family: Inter;
-            font-size: 30px;
-            font-style: normal;
-            font-weight: 650;
-            line-height: 40px;
-            /* 133.333% */
-            letter-spacing: -0.3px;
-        }
-
-
-        .heading20 {
-            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
-            font-variant-numeric: lining-nums proportional-nums stacked-fractions slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            /* Heading/20 */
-            font-family: Inter;
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 650;
-            line-height: 30px;
-            /* 136.364% */
-        }
-
-        .link-30 {
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-
-        .heading10 {
-            /* Heading/10 */
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 650;
-            line-height: 24px;
-            /* 150% */
-            letter-spacing: 0.16px;
-        }
-
-        .red10 {
-            color: #D9322F;
-        }
-
-        .emphasis30 {
-            font-variant-numeric: lining-nums tabular-nums slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            /* Emphasis/30 */
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 24px;
-            /* 150% */
-            letter-spacing: -0.16px;
-        }
-
-        .heading50 {
-            font-variant-numeric: lining-nums proportional-nums stacked-fractions slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            /* Heading/50 */
-            font-family: Inter;
-            font-size: 58px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 64px;
-            /* 110.345% */
-            letter-spacing: -1.74px;
-        }
-
-        .body20 {
-            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
-            font-variant-numeric: lining-nums tabular-nums slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            /* Body/20 */
-            font-family: Inter;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 20px;
-            /* 142.857% */
-        }
-
-        .green10 {
-            color: var(--light-mode-success-green-10, #00A645);
-        }
-
-        .waitlist-button {
-            border-radius: var(--radius-md, 4px);
-            background: var(--light-mode-fill-10, rgba(0, 0, 0, 0.90));
-            border: 1px solid rgba(0, 0, 0, 0.90);
-        }
-
-        .testmonials {
-            color: var(--light-mode-text-10, rgba(0, 0, 0, 0.90));
-            font-variant-numeric: lining-nums tabular-nums slashed-zero;
-            font-feature-settings: 'cv09' on, 'cv01' on, 'cv08' on, 'case' on;
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 24px;
-            /* 150% */
-            letter-spacing: -0.16px;
-            text-decoration-line: underline;
-        }
-
-        .modal {
-            max-width: 700px !important;
-        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 
     <script>
         $(document).ready(function () {
-            $("button").click(function () {
-                $("p").hide();
+            document.getElementById("ipt-submit").addEventListener("click", function (event) {
+                event.preventDefault()
             });
 
             $(".city").change(function () {
                 $(".city").val(this.value);
-                $(".city-paragraph").text(this.value);
+                $(".city-paragraph").text($(this).find('option:selected').text());
             });
+
+            $(".btn-buy-hurricane").click(function () {
+                console.log($('.city'));
+                var value = $('.city').first().find(":selected").val();
+                console.log(value);
+                window.open('https://rainydaymarket.co/products/' + value);
+            });
+
+            $('.waitlist-button').on('click', function () {
+                console.log('aaaaaaaaa');
+                $('#waitlist-modal').modal();
+            });
+
+            $('#ipt-submit').on('click', function () {
+                console.log($('#ipt-email').val());
+
+                // heap.track('Waitlist', { event: 'event', email: $('#ipt-email').val() });
+                $('.close-modal').click();
+            });
+
+            $(".btn-buy-gas").click(function () {
+                window.open('https://dailygasmarket.com/products/national-gas-below-dec-31');
+            });
+
         });
     </script>
 </head>
 
 <body>
     <div>
-        <div class="box  preapred-box">
-            <div class="container">
-                <div class="preapred-title">
-                    <h1 class="prepared-text heading50">Be prepared.</h1>
+        <div class="red-background">
+            <div class="container px48-top">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="text-white heading50">Be prepared.</h1>
 
-                    <div class="container">
-                        <p>
-                            <span>
-                                <p class="heading30 prepared-text" style="color: white; padding-right: 4px;"> I'm living
-                                    in </p>
-                            </span>
-                            <span style="display: flex;">
-                                <select name="city" class="city prepared-select" id="city">
-                                    <option value="Orlando, FL">Orlando, FL</option>
-                                    <option value="New York, NY">New York, NY</option>
-                                </select>
-                            </span>
+                        <div class="row col">
+                            <p>
+                                <span>
+                                    <p class="heading30 text-white" style="color: white; padding-right: 4px;"> I'm
+                                        living
+                                        in </p>
+                                </span>
+                                <span style="display: flex;">
+                                    <select name="city" class="city prepared-select" id="city">
+                                        <option value="miami-fl">Miami, FL</option>
+                                        <option value="charleston-sc">Charleston, SC</option>
+                                    </select>
+                                </span>
+                            </p>
+
+                        </div>
+
+                        <p class="text-white emphasis30">
+                            Stable is here to give you and your family peace of mind. We offer tickets that help
+                            everyday
+                            people
+                            take control over their exposure to future events, such as natural disasters like
+                            hurricanes, or
+                            the
+                            increase in the price of gas. 
+                            It’s that simple: you buy tickets and if the event happens you get paid out in less than 24
+                            hours.
+                        </p>
+                    </div>
+                    <div class="col">
+                        <img class="prepared-image" src="prepared.svg" alt="Girl in a jacket">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="px32-top">
+            <div class="container light-yellow-background m32-top" style="max-width: 800px; margin: auto;">
+                <div class="row light-yellow-background px16-vertical px16-right">
+                    <div class="col ">
+                        <div>
+                            <select name="city" class="city default-select" id="city">
+                                <option value="miami-fl">Miami, FL</option>
+                                <option value="charleston-sc">Charleston, SC</option>
+                            </select>
+                        </div>
+
+                        <p class="heading20">
+                            Hurricane tickets nearby
                         </p>
 
-
-
+                        <img style="margin-top: 16px; height: 262px; max-width: 432px; object-fit: cover;"
+                            src="hurricane-tickets.svg" alt="Girl in a jacket">
                     </div>
 
-                    <p class="prepared-text emphasis30">
-                        Stable is here to give you and your family peace of mind. We offer tickets that help everyday
-                        people
-                        take control over their exposure to future events, such as natural disasters like hurricanes, or
-                        the
-                        increase in the price of gas. 
-                        It’s that simple: you buy tickets and if the event happens you get paid out in less than 24
-                        hours.
-                    </p>
-                </div>
-                <img class="prepared-image" src="hurricane.svg" alt="Girl in a jacket">
-                <img class="prepared-image" src="emergency.svg" alt="Girl in a jacket">
-                <img src="gas.svg" alt="Girl in a jacket">
-            </div>
+                    <div class="col white-background px16-all">
+                        <p class="city-paragraph body20" style="padding-bottom: 4px;">
+                            Miami, FL
+                        </p>
+                        <p class="heading10" style="padding-bottom: 4px;">
+                            Category 3+ Hurricanes in 2023
+                        </p>
+                        <p class="body20">
+                            1 ticket
+                        </p>
+                        <hr>
+                        <div class="container">
+                            <div class="row space-between-row">
+                                <p class="body20">Cost</p>
+                                <p class="emphasis30">$50</p>
+                            </div>
+                            <div class="row space-between-row">
+                                <p class="body20">Payout</p>
+                                <p class="heading20 green10">$1,000</p>
+                            </div>
+                        </div>
 
-        </div>
 
-        <div class="buy-box">
-            <div class="container buy-section">
-                <div style="width: 432px;">
-                    <div class="container">
-                        <select name="city" class="city default-select" id="city">
-                            <option value="Orlando, FL">Orlando, FL</option>
-                            <option value="New York, NY">New York, NY</option>
-                        </select>
+                        <hr>
+                        <p class="body20">Payouts available immediately after hurricane verified by NOAA.</p>
+                        <div>
+                            <button class="btn-buy-hurricane">Buy $50 supplemental coverage</button>
+                        </div>
+
                     </div>
-
-
-                    <p class="heading20">
-                        Hurricane tickets nearby
-
-                    </p>
-
-                    <img style="margin-top: 16px; height: 309px; max-width: 432px; object-fit: cover;"
-                        src="hurricane-tickets.svg" alt="Girl in a jacket">
-                </div>
-
-                <div class="buy-right-section">
-                    <p class="city-paragraph body20" style="padding-bottom: 4px;">
-                        Orlando, FL
-                    </p>
-                    <p class="heading10" style="padding-bottom: 4px;">
-                        Category 3+ Hurricanes in 2023
-                    </p>
-                    <p class="body20">
-                        1 ticket
-                    </p>
-                    <hr>
-                    <div class="container space-between-row">
-                        <p class="body20">Cost</p>
-                        <p class="emphasis30">$50</p>
-                    </div>
-                    <div class="container space-between-row">
-                        <p class="body20">Payout</p>
-                        <p class="heading20 green10">$1,000</p>
-                    </div>
-
-                    <hr>
-                    <p class="body20">Payouts available immediately after hurricane verified by NOAA.</p>
-                    <button>Buy $50 supplemental coverage</button>
                 </div>
             </div>
         </div>
 
 
-        <div class="box">
+        <div class="container px48-vertical">
 
-            <div class="container">
+            <div class="row">
 
-                <div>
+                <div class="col">
                     <h3 class="heading30 heading-box">Get immediate relief after a hurricane hits</h3>
                     <p class="body30">
                         We provide supplemental hurricane coverage that gets cash into people’s hands within 24 hours
@@ -508,7 +178,8 @@
                         Hurricane articles
                     </p>
 
-                    <p class="link-30"><a href="#hurricane-article-1" rel="modal:open">What will happen to your home at
+                    <p class="link-30"><a class="list-unstyled" href="#hurricane-article-1" rel="modal:open">What will
+                            happen to your home at
                             different
                             hurricane categories?</a></p>
                     <p class="link-30"><a href="#hurricane-article-2" rel="modal:open">What is "storm surge" and how can
@@ -521,40 +192,64 @@
                             house for a
                             hurricane evacuation</a></p>
                 </div>
-                <div>
-                    <img class="img-container" src="Image.svg" alt="Girl in a jacket">
+                <div class="col">
+                    <img src="Image.svg" alt="Girl in a jacket">
                 </div>
 
 
             </div>
         </div>
 
-        <div class="box grey-background">
-            <h4 class="heading20">How tickets work</h4>
-            <div class="container" style="margin-top: 16px;">
-                <div class="container item">
-                    <div class="icon">
-                        <img src="ticket.svg" alt="Girl in a jacket">
+        <div class="grey-background">
+            <div class="container px48-vertical">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="heading20">How tickets work</h4>
+                        </div>
                     </div>
 
-                    <p class="body30">
-                        Tickets are simple to understand and offer limited risk. They vary in price and protection, so
-                        choose one that suits your needs and budget.
-                    </p>
                 </div>
-                <div class="right-divider"></div>
-                <div class="container item">
-                    <div class="icon">
-                        <img src="lock.svg" alt="Girl in a jacket">
+
+                <div class="container" style="margin-top: 16px;">
+                    <div class="row">
+                        <div class="col">
+                            <div style="display: flex;">
+                                <div class="icon">
+                                    <img src="ticket.svg" alt="Girl in a jacket">
+                                </div>
+
+                                <p class="body30">
+                                    Tickets are simple to understand and offer limited risk. They vary in price and
+                                    protection,
+                                    so
+                                    choose one that suits your needs and budget.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+                            <div style="display: flex;">
+                                <div class="icon">
+                                    <img src="lock.svg" alt="Girl in a jacket">
+                                </div>
+
+                                <p class="body30">
+                                    Stable is powered by a federally regulated financial exchange in the background.
+                                    Your
+                                    tickets
+                                    and
+                                    potential payout funds are held in a segregated account in bank from the moment of
+                                    purchase.
+                                </p>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <p class="body30">
-                        Stable is powered by a federally regulated financial exchange in the background. Your tickets
-                        and
-                        potential payout funds are held in a segregated account in bank from the moment of purchase.
-                    </p>
-                </div>
 
+                </div>
             </div>
         </div>
 
@@ -563,10 +258,11 @@
 
 
 
-        <div class="box">
 
-            <div class="container">
-                <div class="item">
+        <div class="container px48-vertical">
+
+            <div class="row">
+                <div class="col">
                     <h3 class="heading30 heading-box">Lock in your gas prices for the rest of the year</h3>
                     <p>
                         Worried that the price of gas is going to keep going up this year? We offer tickets that pay out
@@ -591,125 +287,153 @@
                             same price day to day? Do they have a meeting or what?</a></p>
                 </div>
 
-                <div class="item">
-                    <img class="img-container" src="Image-3.svg" alt="Girl in a jacket">
+                <div class="col">
+                    <img src="Image-3.svg" alt="Girl in a jacket">
                 </div>
             </div>
 
-            <div class="container buy-section" style="margin-top: 32px;">
-                <div style="width: 432px;">
-                    <div class="container">
-                        <select name="city" class="city default-select" id="city">
-                            <option value="Orlando, FL">Orlando, FL</option>
-                            <option value="New York, NY">New York, NY</option>
-                        </select>
+
+
+
+            <div class="px32-top">
+                <div class="container" style="max-width: 800px; margin: auto;">
+                    <div class="row light-yellow-background px16-vertical px16-right">
+                        <div class="col">
+                            <div>
+                                <select name="city" class="city default-select" id="city">
+                                    <option value="miami-fl">Miami, FL</option>
+                                    <option value="charleston-sc">Charleston, SC</option>
+                                </select>
+                            </div>
+
+
+                            <p class="heading20">
+                                Gas tickets nearby
+
+                            </p>
+                            <img style="margin-top: 16px; height: 262px; max-width: 432px; object-fit: cover;"
+                                src="gas-tickets.svg" alt="Girl in a jacket">
+                        </div>
+
+                        <div class="col white-background px16-all">
+                            <p class="city-paragraph body20" style="padding-bottom: 4px;">
+                                Miami, FL
+                            </p>
+                            <p class="heading10" style="padding-bottom: 4px;">
+                                Will it go above $3.40 in 2023?
+                            </p>
+                            <p class="body20">
+                                1 ticket
+                            </p>
+                            <hr>
+                            <div class="container">
+                                <div class="row space-between-row">
+                                    <p class="body20">Cost</p>
+                                    <p class="emphasis30">$200</p>
+                                </div>
+                                <div class="row space-between-row">
+                                    <p class="body20">Payout</p>
+                                    <p class="heading20 green10">$400</p>
+                                </div>
+                            </div>
+
+
+                            <hr>
+                            <p class="body20">Payouts available immediately after the gas prices are announced by the
+                                AAA.
+                            </p>
+                            <button class="btn-buy-gas">Buy $200 supplemental coverage</button>
+                        </div>
                     </div>
 
-
-                    <p class="heading20">
-                        Gas tickets nearby
-
-                    </p>
-                    <img style="margin-top: 16px; height: 309px; max-width: 432px; object-fit: cover;"
-                        src="gas-tickets.svg" alt="Girl in a jacket">
-                </div>
-
-                <div class="buy-right-section">
-                    <p class="city-paragraph body20" style="padding-bottom: 4px;">
-                        Orlando, FL
-                    </p>
-                    <p class="heading10" style="padding-bottom: 4px;">
-                        Will it go above $3.40 in 2023?
-                    </p>
-                    <p class="body20">
-                        1 ticket
-                    </p>
-                    <hr>
-                    <div class="container space-between-row">
-                        <p class="body20">Cost</p>
-                        <p class="emphasis30">$200</p>
-                    </div>
-                    <div class="container space-between-row">
-                        <p class="body20">Payout</p>
-                        <p class="heading20 green10">$400</p>
-                    </div>
-
-                    <hr>
-                    <p class="body20">Payouts available immediately after the gas prices are announced by the AAA.
-                    </p>
-                    <button>Buy $200 supplemental coverage</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="box grey-background">
-
-            <div class="container">
-                <div class="item">
-                    <h3 class="heading30 heading-box">Protect your family against any major disasters in your area</h3>
-                    <p class="body30">
-                        Each part of the country has a list of disasters that might happen and bring damage, costs and
-                        headache for your family.We're launching disaster bundle tickets that will pay out if any major
-                        natural disaster happens in your city. Join the waitlist to get early access.
-                    </p>
-                </div>
-
-                <div class="item">
-                    <img class="img-container" src="major-disasters.svg" alt="Girl in a jacket">
-                </div>
-
-            </div>
-
-            <div class="container buy-section" style="margin-top: 32px;">
-                <div style="width: 432px;">
-                    <div class="container">
-                        <select name="city" class="city default-select" id="city">
-                            <option value="Orlando, FL">Orlando, FL</option>
-                            <option value="New York, NY">New York, NY</option>
-                        </select>
-                    </div>
-
-
-                    <p class="heading20">
-                        Natural disaster tickets nearby
-
-                    </p>
-                    <div>
-                        <img style="margin-top: 16px; height: 309px; max-width: 432px; object-fit: cover;"
-                            src="disasters-tickets.svg" alt="Girl in a jacket">
-                    </div>
-
-                </div>
-
-                <div class="buy-right-section">
-                    <p class="city-paragraph body20" style="padding-bottom: 4px;">
-                        Orlando, FL
-                    </p>
-                    <p class="heading10" style="padding-bottom: 4px;">
-                        Hurricane, tornado, flood, or earthquake in 2023
-                    </p>
-                    <p class="body20">
-                        1 ticket
-                    </p>
-                    <hr>
-                    <div class="container space-between-row">
-                        <p class="body20">Cost</p>
-                        <p class="emphasis30">$</p>
-                    </div>
-                    <div class="container space-between-row">
-                        <p class="body20">Payout</p>
-                        <p class="heading20 green10">$$$</p>
-                    </div>
-
-                    <hr>
-                    <p class="body20">Payouts available immediately after the natural disaster is verified by FEMA.
-                    </p>
-                    <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
             </div>
         </div>
 
-        <div class="box">
+        <div class="grey-background">
+            <div class="container px48-vertical">
+
+                <div class="row">
+                    <div class="col">
+                        <h3 class="heading30 heading-box">Protect your family against any major disasters in your area
+                        </h3>
+                        <p class="body30">
+                            Each part of the country has a list of disasters that might happen and bring damage, costs
+                            and
+                            headache for your family.We're launching disaster bundle tickets that will pay out if any
+                            major
+                            natural disaster happens in your city. Join the waitlist to get early access.
+                        </p>
+                    </div>
+
+                    <div class="col">
+                        <img src="major-disasters.svg" alt="Girl in a jacket">
+                    </div>
+
+                </div>
+
+                <div class="px32-top">
+                    <div class="container" style="max-width: 800px; margin: auto;">
+                        <div class="row white-background px16-vertical px16-right">
+                            <div class="col ">
+                                <div>
+                                    <select name="city" class="city default-select" id="city">
+                                        <option value="miami-fl">Miami, FL</option>
+                                        <option value="charleston-sc">Charleston, SC</option>
+                                    </select>
+                                </div>
+
+
+                                <p class="heading20">
+                                    Natural disaster tickets nearby
+
+                                </p>
+                                <div>
+                                    <img style="margin-top: 16px; height: 286px; max-width: 432px; object-fit: cover;"
+                                        src="disasters-tickets.svg" alt="Girl in a jacket">
+                                </div>
+                            </div>
+
+                            <div class="col light-yellow-background px16-all">
+                                <p class="city-paragraph body20" style="padding-bottom: 4px;">
+                                    Miami, FL
+                                </p>
+                                <p class="heading10" style="padding-bottom: 4px;">
+                                    Hurricane, tornado, flood, or earthquake in 2023
+                                </p>
+                                <p class="body20">
+                                    1 ticket
+                                </p>
+                                <hr>
+                                <div class="container">
+                                    <div class="row space-between-row">
+                                        <p class="body20">Cost</p>
+                                        <p class="emphasis30">$</p>
+                                    </div>
+                                    <div class="row space-between-row">
+                                        <p class="body20">Payout</p>
+                                        <p class="heading20 green10">$$$</p>
+                                    </div>
+                                </div>
+
+
+                                <hr>
+                                <p class="body20">Payouts available immediately after the natural disaster is verified
+                                    by
+                                    FEMA.
+                                </p>
+                                <button class="waitlist-button"><i class="fa fa-bell"></i>Join
+                                    waitlist</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container px48-vertical">
             <p class="heading30" style="margin-bottom: 32px;">
                 <span>
                     More tickets,
@@ -719,190 +443,233 @@
                 </span>
 
             </p>
-            <div class="container">
+            <div class="row">
+                <div class="col-3 ">
 
-                <div class="coming-soon">
-                    <img src="wildfires.svg" alt="Girl in a jacket">
-                    <div style="padding: 16px;">
-                        <p class="heading20">Wildfires</p>
-                        <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
-                    </div>
+                    <img class="coming-soon-img" src="wildfires.svg" alt="Girl in a jacket">
+                    <p class="heading20">Wildfires</p>
+                    <button class="waitlist-button"><i class="fa fa-bell"></i>Join waitlist</button>
 
                 </div>
-                <div class="coming-soon">
-                    <img src="tornadoes.svg" alt="Girl in a jacket">
-                    <div style="padding: 16px;">
-                        <p class="heading20">Tornadoes</p>
-                        <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
-                    </div>
-
+                <div class="col-3 ">
+                    <img class="coming-soon-img" src="tornadoes.svg" alt="Girl in a jacket">
+                    <p class="heading20">Tornadoes</p>
+                    <button class="waitlist-button"><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
-                <div class="coming-soon">
-                    <img src="flood.svg" alt="Girl in a jacket">
-                    <div style="padding: 16px;">
-                        <p class="heading20">Flood</p>
-                        <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
-                    </div>
-
+                <div class="col-3 ">
+                    <img class="coming-soon-img" src="flood.svg" alt="Girl in a jacket">
+                    <p class="heading20">Flood</p>
+                    <button class="waitlist-button"><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
-                <div class="coming-soon">
-                    <img src="food.svg" alt="Girl in a jacket">
-                    <div style="padding: 16px;">
-                        <p class="heading20">Food prices</p>
-                        <button class="waitlist-button" disabled><i class="fa fa-bell"></i>Join waitlist</button>
-                    </div>
-
+                <div class="col-3 ">
+                    <img class="coming-soon-img" src="tornadoes.svg" alt="Girl in a jacket">
+                    <p class="heading20">Food prices</p>
+                    <button class="waitlist-button"><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
             </div>
 
         </div>
 
+        <div class="grey-background">
+            <div class="container  px48-vertical">
+                <h3 class="heading30">Testimonials & reviews</h3>
+                <div class=" " style="margin-bottom: 32px; margin-top: 32px; border-radius: var(--radius-md, 4px);">
 
-        <div class="box grey-background">
-            <h3 class="heading30">Testimonials & reviews</h3>
-            <div class="container" style="margin-bottom: 32px; margin-top: 32px;">
-                <i class="fa fa-info-circle"></i>
-                <p class="testmonials">Why are people flocking to this $50 product for supplemental hurricane coverage?
-                </p>
-            </div>
 
-            <div class="container">
-                <div class="review-box">
-                    <div class="container">
-                        <img class="user-image" src="user-marcia.svg" alt="Girl in a jacket">
-                        <div>
-                            <p>Marcia Gomez</p>
-                            <p>Fort Myers, Florida</p>
-                            <img src="5-star.svg" alt="Girl in a jacket">
-                        </div>
-
-                    </div>
+                    <p class="col testmonials white-background px8-all" style="display: inline;"><i
+                            class="fa fa-info-circle" style="padding-right: 8px;"></i>Why are people flocking to this
+                        $50
+                        product for supplemental
+                        hurricane
+                        coverage?
+                    </p>
 
 
                 </div>
-                <p class="body30">
-                    “I bought hurricane tickets last year to help cover my deductibles. We all know Florida is a great
-                    state
-                    to live in but the hurricanes really can fuck you over. It started as a slow season but September
-                    came
-                    around and Ian came straight at us… I evacuated because I’m not one to play with fate. As soon as
-                    Ian
-                    was declared to hit Fort Myers as a category 4 hurricane I saw my payout made available in the
-                    website
-                    and proceeded to withdraw. Had the money in my bank account next day and used it to pay for hotels,
-                    food, and also a lot of damage we had in our house and garden. We are on a tight budget since my
-                    husband
-                    lost his job and I really don’t think we’d have been able to manage this so well without these
-                    hurricane
-                    tickets. I’m definitely buying them again this year!”
-                </p>
-            </div>
 
-            <hr>
+                <div class="row">
 
-            <div class="container">
-                <div class="review-box">
-                    <div class="container">
-                        <img class="user-image" src="james.svg" alt="Girl in a jacket">
-                        <div>
-                            <p>James Mitchell</p>
-                            <p>Imperial Valley, California</p>
-                            <img src="4-star.svg" alt="Girl in a jacket">
+                    <div>
+                        <div class="row" style="max-width: 320px; min-width:320px;">
+                            <div class="col" style="max-width: 48px; margin-right: 16px;">
+                                <img class="user-image" src="user-marcia.svg" alt="Girl in a jacket">
+                            </div>
+
+                            <div class="col">
+                                <p>Marcia Gomez</p>
+                                <p>Fort Myers, Florida</p>
+                                <img src="5-star.svg" alt="Girl in a jacket">
+
+                            </div>
+
+
                         </div>
-
                     </div>
 
 
+                    <p class="body30 col">
+                        “I bought hurricane tickets last year to help cover my deductibles. We all know Florida is a
+                        great
+                        state
+                        to live in but the hurricanes really can fuck you over. It started as a slow season but
+                        September
+                        came
+                        around and Ian came straight at us… I evacuated because I’m not one to play with fate. As
+                        soon as
+                        Ian
+                        was declared to hit Fort Myers as a category 4 hurricane I saw my payout made available in
+                        the
+                        website
+                        and proceeded to withdraw. Had the money in my bank account next day and used it to pay for
+                        hotels,
+                        food, and also a lot of damage we had in our house and garden. We are on a tight budget
+                        since my
+                        husband
+                        lost his job and I really don’t think we’d have been able to manage this so well without
+                        these
+                        hurricane
+                        tickets. I’m definitely buying them again this year!”
+                    </p>
+
+
                 </div>
-                <p class="body30">
-                    “I bought some drought tickets last year. I have a small farm in Imperial Valley and there was a
-                    chance we were gonna get our water cut because of the levels on the Colorado River going down. We
-                    were lucky that it didn’t go down enough for my water to be cut, but I appreciated the peace of mind
-                    the ticket brought me. Will buy it again, but keep praying I don’t have to use it!”
-                </p>
-            </div>
 
-            <hr>
+                <hr>
 
-            <div class="container">
-                <div class="review-box">
-                    <div class="container">
-                        <img class="user-image" src="olivia.svg" alt="Girl in a jacket">
-                        <div>
-                            <p>Olivia Taylor</p>
-                            <p>Charleston, South Carolina</p>
-                            <img src="5-star.svg" alt="Girl in a jacket">
+                <div class="row">
+                    <div>
+                        <div class="row" style="max-width: 320px; min-width:320px;">
+                            <div class="col" style="max-width: 48px; margin-right: 16px;">
+                                <img class="user-image" src="james.svg" alt="Girl in a jacket">
+                            </div>
+
+                            <div class="col">
+                                <p>James Mitchell</p>
+                                <p>Imperial Valley, California</p>
+                                <img src="4-star.svg" alt="Girl in a jacket">
+                            </div>
+
                         </div>
+                    </div>
 
+                    <p class="body30 col">
+                        “I bought some drought tickets last year. I have a small farm in Imperial Valley and there
+                        was a
+                        chance we were gonna get our water cut because of the levels on the Colorado River going
+                        down. We
+                        were lucky that it didn’t go down enough for my water to be cut, but I appreciated the peace
+                        of mind
+                        the ticket brought me. Will buy it again, but keep praying I don’t have to use it!”
+                    </p>
+
+
+
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div>
+                        <div class="row" style="max-width: 320px; min-width:320px;">
+                            <div class="col" style="max-width: 48px; margin-right: 16px;">
+                                <img class="user-image" src="olivia.svg" alt="Girl in a jacket">
+                            </div>
+
+                            <div class="col">
+                                <p>Olivia Taylor</p>
+                                <p>Charleston, South Carolina</p>
+                                <img src="5-star.svg" alt="Girl in a jacket">
+                            </div>
+
+                        </div>
                     </div>
 
 
+                    <p class="body30 col">
+                        “ I just bought my first couple of tickets this season to help with deductibles. It was
+                        super easy
+                        to
+                        buy them, and Rainy Day Market has been sending me useful alerts about the weather.
+                        Thankfully no
+                        payout yet, hoping these hurricanes stay away!”
+                    </p>
+
+
                 </div>
-                <p class="body30">
-                    “ I just bought my first couple of tickets this season to help with deductibles. It was super easy
-                    to
-                    buy them, and Rainy Day Market has been sending me useful alerts about the weather. Thankfully no
-                    payout yet, hoping these hurricanes stay away!”
-                </p>
-            </div>
-            <hr>
-            <div class="container">
-                <div class="review-box">
-                    <div class="container">
-                        <img class="user-image" src="james-anderson.svg" alt="Girl in a jacket">
-                        <div>
-                            <p>James Anderson</p>
-                            <p>Bend, Oregon</p>
-                            <img src="5-star.svg" alt="Girl in a jacket">
+                <hr>
+                <div class="row">
+                    <div>
+                        <div class="row" style="max-width: 320px; min-width:320px;">
+                            <div class="col" style="max-width: 48px; margin-right: 16px;">
+                                <img class="user-image" src="james-anderson.svg" alt="Girl in a jacket">
+                            </div>
+
+                            <div class="col">
+                                <p>James Anderson</p>
+                                <p>Bend, Oregon</p>
+                                <img src="5-star.svg" alt="Girl in a jacket">
+                            </div>
                         </div>
 
+
                     </div>
+                    <p class="body30 col">
+                        “I bought a ticket that would pay out if gas prices in Oregon hit more than $5 in 2022. I really
+                        thought about it as a worst case scenario insurance I was buying, I really thought there was no
+                        way
+                        that was going to happen. Looking back I don’t even know how I decided to really buy it, must
+                        have
+                        been god trying to help our family out… As soon as it hit $5 I got my payout and the support
+                        folks
+                        were very nice helping me withdraw the payout. My tickets paid out 20x, and I got around $1000
+                        to
+                        help my family with gas costs. Will keep using this service. You never know what can happen.”
+                    </p>
 
 
                 </div>
-                <p class="body30">
-                    “I bought a ticket that would pay out if gas prices in Oregon hit more than $5 in 2022. I really
-                    thought about it as a worst case scenario insurance I was buying, I really thought there was no way
-                    that was going to happen. Looking back I don’t even know how I decided to really buy it, must have
-                    been god trying to help our family out… As soon as it hit $5 I got my payout and the support folks
-                    were very nice helping me withdraw the payout. My tickets paid out 20x, and I got around $1000 to
-                    help my family with gas costs. Will keep using this service. You never know what can happen.”
-                </p>
-            </div>
-            <hr>
-            <div class="container">
-                <div class="review-box">
-                    <div class="container">
-                        <img class="user-image" src="sophie.svg" alt="Girl in a jacket">
-                        <div>
-                            <p>Sophie-Louise Roberts</p>
-                            <p>Perry, Florida</p>
-                            <img src="5-star.svg" alt="Girl in a jacket">
+                <hr>
+                <div class="row">
+
+                    <div>
+                        <div class="row" style="max-width: 320px;min-width: 320px;">
+                            <div class="col" style="max-width: 48px; margin-right: 16px;">
+                                <img class="user-image" src="sophie.svg" alt="Girl in a jacket">
+                            </div>
+
+                            <div class="col">
+                                <p>Sophie-Louise Roberts</p>
+                                <p>Perry, Florida</p>
+                                <img src="5-star.svg" alt="Girl in a jacket">
+                            </div>
+
                         </div>
-
                     </div>
 
+                    <p class="body30 col">
+                        “These tickets paid out for Hurricane Idalia and I was able to have peace of mind and money to
+                        evacuate my family fast. Thank you!”
+                    </p>
 
                 </div>
-                <p class="body30">
-                    “These tickets paid out for Hurricane Idalia and I was able to have peace of mind and money to
-                    evacuate my family fast. Thank you!”
-                </p>
+
+
             </div>
+
         </div>
 
 
-        <div class="box">
+        <div class="container px48-vertical">
             <h3 class="heading30">Popular disaster relief organizations</h3>
-            <div class="container donation-box">
+            <div class="row donation-box">
                 <img src="red-cross.svg" class="relief-image" alt="Girl in a jacket">
                 <img src="salvation-army.svg" class="relief-image" alt="Girl in a jacket">
                 <img src="united-way.svg" class="relief-image" alt="Girl in a jacket">
                 <img src="team-rubicon.svg" class="relief-image" alt="Girl in a jacket">
                 <img src="direct-relief.svg" class="relief-image" alt="Girl in a jacket">
             </div>
-            <div class="container">
-                <div class="item">
+            <div class="row">
+                <div class="col">
                     <p class="heading10 red10">
                         Donate to reputable organizations
                     </p>
@@ -914,7 +681,7 @@
                     </p>
                 </div>
                 <div class="right-divider"></div>
-                <div class="item">
+                <div class="col">
                     <p class="heading10 red10">
                         Donate what is most needed
                     </p>
@@ -925,7 +692,7 @@
                     </p>
                 </div>
                 <div class="right-divider"></div>
-                <div class="item">
+                <div class="col">
                     <p class="heading10 red10">
                         Donate wisely
                     </p>
@@ -938,21 +705,29 @@
                 </div>
             </div>
             <div class="container donation">
-                <div class="item">
-                    <p class="heading20">
-                        Every donation helps, no matter how small.
-                    </p>
-                    <p class="body30">
-                        By donating to a hurricane disaster relief organization, you can help people affected by these
-                        storms rebuild their lives.
-                    </p>
+                <div class="row px16-all" style="justify-content: space-between;">
+                    <div class="md">
+                        <p class="heading20">
+                            Every donation helps, no matter how small.
+                        </p>
+                        <p class="body30">
+                            By donating to a hurricane disaster relief organization, you can help people affected by
+                            these
+                            storms rebuild their lives.
+                        </p>
+                    </div>
+                    <div class="md">
+                        <button class="waitlist-button" style="max-width: 209px;">Donate your ticket winning</button>
+                    </div>
+
                 </div>
-                <button class="waitlist-button" style="max-width: 209px;">Donate your ticket winning</button>
+
             </div>
         </div>
 
 
     </div>
+
     <div id="hurricane-article-3" class="modal body30">
         <p class="heading30">
             Can your house hold up under a hurricane? Here are five things to do to minimize damage.
@@ -1755,7 +1530,15 @@
             smart to shop around. Small differences can pop up, and you might just stumble upon a station with a few
             cents off the gallon, which can add up over time. Happy fueling!
         </p>
-
-
     </div>
+
+
+
+
+    <form action="" class="login_form modal" id="waitlist-modal" style="display: inline-block;">
+        <h3>Enter your e-mail</h3>
+        <p><label>Email:</label><input id="ipt-email" type="email"></p>
+        <p><input type="submit" id="ipt-submit" value="Submit"></p> <a href="#close-modal" rel="modal:close"
+            class="close-modal ">Close</a>
+    </form>
 </body>
