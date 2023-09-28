@@ -25,6 +25,51 @@
             $(".city").change(function () {
                 $(".city").val(this.value);
                 $(".city-paragraph").text($(this).find('option:selected').text());
+                if (this.value == 'charleston-sc') {
+                    $('#payout').text("$850");
+                }
+                else if (this.value == 'coastal-texas') {
+                    $('#payout').text("$350");
+                }
+                else if (this.value == 'gulf-shores-al') {
+                    $('#payout').text("$1,000");
+                }
+                else if (this.value == 'hatteras-island-nc') {
+                    $('#payout').text("$700");
+                }
+                else if (this.value == 'jacksonvillem-fl') {
+                    $('#payout').text("$1,250");
+                }
+                else if (this.value == 'miami-fl') {
+                    $('#payout').text("$500");
+                }
+                else if (this.value == 'morehead-city-nc') {
+                    $('#payout').text("$1,250");
+                }
+                else if (this.value == 'nantucket-ma') {
+                    $('#payout').text("$1,000");
+                }
+                else if (this.value == 'new-orleans-la') {
+                    $('#payout').text("$650");
+                }
+                else if (this.value == 'norfolk-ct') {
+                    $('#payout').text("$2,500");
+                }
+                else if (this.value == 'orlando-fl') {
+                    $('#payout').text("$1,000");
+                }
+                else if (this.value == 'panama-city') {
+                    $('#payout').text("$800");
+                }
+                else if (this.value == 'tampa-fl') {
+                    $('#payout').text("$800");
+                }
+                else if (this.value == 'virginia-beach-va') {
+                    $('#payout').text("$2,500");
+                }
+                else if (this.value == 'wilmington-de') {
+                    $('#payout').text("$850");
+                }
             });
 
             $(".btn-buy-hurricane").click(function () {
@@ -74,8 +119,20 @@
                                 </span>
                                 <span style="display: flex;">
                                     <select name="city" class="city prepared-select" id="city">
+                                        <option value="coastal-texas">Coastal Texas</option>
+                                        <option value="gulf-shores-al">Gulf Shores</option>
+                                        <option value="hatteras-island-nc">Hatteras Island, NC</option>
+                                        <option value="jacksonvillem-fl">Jacksonville, FL</option>
                                         <option value="miami-fl">Miami, FL</option>
-                                        <option value="charleston-sc">Charleston, SC</option>
+                                        <option value="morehead-city-nc">Morehead City, NC</option>
+                                        <option value="nantucket-ma">Nantucket, MA</option>
+                                        <option value="new-orleans-la">New Orlenas, LA</option>
+                                        <option value="norfolk-ct">Norfolk, CT</option>
+                                        <option value="orlando-fl">Orlando, FL</option>
+                                        <option value="panama-city">Panama City, FL</option>
+                                        <option value="tampa-fl">Tampa, FL</option>
+                                        <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                        <option value="wilmington-de">Wilmington, DE</option>
                                     </select>
                                 </span>
                             </p>
@@ -110,8 +167,20 @@
                     <div class="col ">
                         <div>
                             <select name="city" class="city default-select" id="city">
+                                <option value="coastal-texas">Coastal Texas</option>
+                                <option value="gulf-shores-al">Gulf Shores</option>
+                                <option value="hatteras-island-nc">Hatteras Island, NC</option>
+                                <option value="jacksonvillem-fl">Jacksonville, FL</option>
                                 <option value="miami-fl">Miami, FL</option>
-                                <option value="charleston-sc">Charleston, SC</option>
+                                <option value="morehead-city-nc">Morehead City, NC</option>
+                                <option value="nantucket-ma">Nantucket, MA</option>
+                                <option value="new-orleans-la">New Orlenas, LA</option>
+                                <option value="norfolk-ct">Norfolk, CT</option>
+                                <option value="orlando-fl">Orlando, FL</option>
+                                <option value="panama-city">Panama City, FL</option>
+                                <option value="tampa-fl">Tampa, FL</option>
+                                <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                <option value="wilmington-de">Wilmington, DE</option>
                             </select>
                         </div>
 
@@ -125,7 +194,7 @@
 
                     <div class="col white-background px16-all">
                         <p class="city-paragraph body20" style="padding-bottom: 4px;">
-                            Miami, FL
+                            Coastal Texas
                         </p>
                         <p class="heading10" style="padding-bottom: 4px;">
                             Category 3+ Hurricanes in 2023
@@ -141,7 +210,7 @@
                             </div>
                             <div class="row space-between-row">
                                 <p class="body20">Payout</p>
-                                <p class="heading20 green10">$1,000</p>
+                                <p class="heading20 green10" id="payout">$350</p>
                             </div>
                         </div>
 
@@ -159,9 +228,7 @@
 
 
         <div class="container px48-vertical">
-
             <div class="row">
-
                 <div class="col">
                     <h3 class="heading30 heading-box">Get immediate relief after a hurricane hits</h3>
                     <p class="body30">
@@ -304,8 +371,20 @@
                         <div class="col">
                             <div>
                                 <select name="city" class="city default-select" id="city">
+                                    <option value="coastal-texas">Coastal Texas</option>
+                                    <option value="gulf-shores-al">Gulf Shores</option>
+                                    <option value="hatteras-island-nc">Hatteras Island, NC</option>
+                                    <option value="jacksonvillem-fl">Jacksonville, FL</option>
                                     <option value="miami-fl">Miami, FL</option>
-                                    <option value="charleston-sc">Charleston, SC</option>
+                                    <option value="morehead-city-nc">Morehead City, NC</option>
+                                    <option value="nantucket-ma">Nantucket, MA</option>
+                                    <option value="new-orleans-la">New Orlenas, LA</option>
+                                    <option value="norfolk-ct">Norfolk, CT</option>
+                                    <option value="orlando-fl">Orlando, FL</option>
+                                    <option value="panama-city">Panama City, FL</option>
+                                    <option value="tampa-fl">Tampa, FL</option>
+                                    <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                    <option value="wilmington-de">Wilmington, DE</option>
                                 </select>
                             </div>
 
@@ -381,8 +460,20 @@
                             <div class="col ">
                                 <div>
                                     <select name="city" class="city default-select" id="city">
+                                        <option value="coastal-texas">Coastal Texas</option>
+                                        <option value="gulf-shores-al">Gulf Shores</option>
+                                        <option value="hatteras-island-nc">Hatteras Island, NC</option>
+                                        <option value="jacksonvillem-fl">Jacksonville, FL</option>
                                         <option value="miami-fl">Miami, FL</option>
-                                        <option value="charleston-sc">Charleston, SC</option>
+                                        <option value="morehead-city-nc">Morehead City, NC</option>
+                                        <option value="nantucket-ma">Nantucket, MA</option>
+                                        <option value="new-orleans-la">New Orlenas, LA</option>
+                                        <option value="norfolk-ct">Norfolk, CT</option>
+                                        <option value="orlando-fl">Orlando, FL</option>
+                                        <option value="panama-city">Panama City, FL</option>
+                                        <option value="tampa-fl">Tampa, FL</option>
+                                        <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                        <option value="wilmington-de">Wilmington, DE</option>
                                     </select>
                                 </div>
 
@@ -465,7 +556,7 @@
                     <button class="waitlist-button dark-button"><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
                 <div class="col-3 ">
-                    <img class="coming-soon-img" src="tornadoes.svg" alt="Girl in a jacket">
+                    <img class="coming-soon-img" src="new-food.svg" alt="Girl in a jacket">
                     <p class="heading20">Food prices</p>
                     <button class="waitlist-button dark-button"><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
