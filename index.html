@@ -160,6 +160,14 @@
                 $('.close-modal').click();
             });
 
+            $('.donate-button').on('click', function () {
+                $('#donate-modal').modal();
+            });
+
+            $('#ipt-donate').on('click', function () {
+                $('.close-modal').click();
+            });
+
         });
     </script>
     <script type="text/javascript">
@@ -436,7 +444,7 @@
                         Gas articles
                     </p>
                     <p class="link-30"><a href="#gas-article-1" rel="modal:open">What causes gas prices to move</a></p>
-                    <p class="link-30"><a href="#gas-article-2" rel="modal:open">Why are gast prices going up right
+                    <p class="link-30"><a href="#gas-article-2" rel="modal:open">Why are gas prices going up right
                             now?</a>
                     </p>
                     <p class="link-30"><a href="#gas-article-3" rel="modal:open">Can you predict if gas prices are going
@@ -934,7 +942,7 @@
                         </p>
                     </div>
                     <div>
-                        <button class="dark-button">Donate your ticket winnings</button>
+                        <button class="dark-button donate-button">Donate your ticket winnings</button>
                     </div>
 
                 </div>
@@ -1208,7 +1216,7 @@
                         Gas articles
                     </p>
                     <p class="link-30"><a href="#gas-article-1" rel="modal:open">What causes gas prices to move</a></p>
-                    <p class="link-30"><a href="#gas-article-2" rel="modal:open">Why are gast prices going up right
+                    <p class="link-30"><a href="#gas-article-2" rel="modal:open">Why are gas prices going up right
                             now?</a>
                     </p>
                     <p class="link-30"><a href="#gas-article-3" rel="modal:open">Can you predict if gas prices are going
@@ -1661,7 +1669,7 @@
                         </p>
                     </div>
                     <div style="width: 100%;">
-                        <button class="dark-button">Donate your ticket winning</button>
+                        <button class="dark-button donate-button">Donate your ticket winning</button>
                     </div>
 
                 </div>
@@ -2182,7 +2190,7 @@
 
     <div id="gas-article-2" class="modal body30">
         <p class="heading30">
-            Why are gast prices going up right now?
+            Why are gas prices going up right now?
         </p>
         <p class="px16">
             As we hit the summer of 2023, consumers across the globe are feeling the heat in more ways than one,
@@ -2557,5 +2565,10 @@
         <p><input id="ipt-email" style="width: 100%;" type="email"></p>
         <button class="dark-button" id="ipt-submit">Submit</button>
         <p id="ipt-close" style="text-align: center; padding-top: 16px;">Not now</p>
+    </div>
+
+    <div class="modal" id="donate-modal">
+        <h3>Coming soon</h3>
+        <button class="dark-button" id="ipt-donate">Ok</button>
     </div>
 </body>
