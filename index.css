@@ -237,6 +237,7 @@ hr {
     font-weight: 650;
     line-height: 30px;
     text-decoration-line: underline;
+    width: 169px;
 }
 
 .default-select {
@@ -249,6 +250,7 @@ hr {
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
+    width: 115px;
     /* 142.857% */
 }
 
