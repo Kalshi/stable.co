@@ -24,8 +24,10 @@
             });
 
             $(".city").change(function () {
+                heap.track('ChangeCity', { event: 'ChangeCity', city: $(".city").val(this.value) });
                 $(".city").val(this.value);
                 $(".city-paragraph").text($(this).find('option:selected').text());
+
                 if (this.value == 'charleston-sc') {
                     $('#payout').text("$850");
                 }
@@ -74,9 +76,8 @@
             });
 
             $(".btn-buy-hurricane").click(function () {
-                console.log($('.city'));
                 var value = $('.city').first().find(":selected").val();
-                console.log(value);
+                heap.track('BuyHurricane', { event: 'BuyHurricane', email: $('#ipt-email').val() });
                 window.open('https://rainydaymarket.co/products/' + value);
             });
 
@@ -85,13 +86,12 @@
             });
 
             $('#ipt-submit').on('click', function () {
-                console.log($('#ipt-email').val());
-
-                // heap.track('Waitlist', { event: 'event', email: $('#ipt-email').val() });
+                heap.track('Waitlist', { event: 'Waitlist', email: $('#ipt-email').val() });
                 $('.close-modal').click();
             });
 
             $(".btn-buy-gas").click(function () {
+                heap.track('BuyGas', { event: 'BuyGas', email: $('#ipt-email').val() });
                 window.open('https://dailygasmarket.com/products/national-gas-below-dec-31');
             });
 
@@ -100,6 +100,10 @@
             });
 
         });
+    </script>
+    <script type="text/javascript">
+        window.heap = window.heap || [], heap.load = function (e, t) { window.heap.appid = e, window.heap.config = t = t || {}; var r = document.createElement("script"); r.type = "text/javascript", r.async = !0, r.src = "https://cdn.heapanalytics.com/js/heap-" + e + ".js"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(r, a); for (var n = function (e) { return function () { heap.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }, p = ["addEventProperties", "addUserProperties", "clearEventProperties", "identify", "resetIdentity", "removeEventProperty", "setEventProperties", "track", "unsetEventProperty"], o = 0; o < p.length; o++)heap[p[o]] = n(p[o]) };
+        heap.load("536842692");
     </script>
 </head>
 
