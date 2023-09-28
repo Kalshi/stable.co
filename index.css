@@ -237,7 +237,10 @@ hr {
     font-weight: 650;
     line-height: 30px;
     text-decoration-line: underline;
-    width: 169px;
+    width: 147px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .default-select {
@@ -250,8 +253,11 @@ hr {
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
-    width: 115px;
+    width: 95px;
     /* 142.857% */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .px16-all {
