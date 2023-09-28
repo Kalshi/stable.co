@@ -3,6 +3,23 @@
     src: url(sansation_light.woff);
 }
 
+
+@media screen 
+ and (max-width: 600px) 
+{ 
+    .web {
+        display: none;
+      }
+}
+
+@media screen 
+ and (min-width: 601px) 
+{ 
+    .mobile {
+        display: none;
+      }
+}
+
 /* TAGS */
 body {
     font-family: Inter;
@@ -240,6 +257,10 @@ width: 100%;
     padding-top: 16px;
 }
 
+.img-fit-width{
+    width: 100%;
+}
+
 /* TEXT STYLES */
 
 .body30 {
@@ -396,3 +417,5 @@ width: 100%;
 #ipt-close {
     cursor: pointer;
 }
+
+
