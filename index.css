@@ -360,7 +360,7 @@ width: 100%;
     color: var(--light-mode-success-green-10, #00A645);
 }
 
-.waitlist-button {
+.dark-button {
     border-radius: var(--radius-md, 4px);
     background: var(--light-mode-fill-10, rgba(0, 0, 0, 0.90));
     border: 1px solid rgba(0, 0, 0, 0.90);
@@ -386,4 +386,13 @@ width: 100%;
     overflow-x: visible !important;
     overflow-y: visible !important;
     height: auto !important;
+}
+
+.email-modal {
+    max-width: 272px !important;
+    padding: 24px;
+}
+
+#ipt-close {
+    cursor: pointer;
 }

@@ -35,7 +35,6 @@
             });
 
             $('.waitlist-button').on('click', function () {
-                console.log('aaaaaaaaa');
                 $('#waitlist-modal').modal();
             });
 
@@ -48,6 +47,10 @@
 
             $(".btn-buy-gas").click(function () {
                 window.open('https://dailygasmarket.com/products/national-gas-below-dec-31');
+            });
+
+            $('#ipt-close').on('click', function () {
+                $('.close-modal').click();
             });
 
         });
@@ -422,7 +425,7 @@
                                     by
                                     FEMA.
                                 </p>
-                                <button class="waitlist-button"><i class="fa fa-bell"></i>Join
+                                <button class="waitlist-button dark-button"><i class="fa fa-bell"></i>Join
                                     waitlist</button>
                             </div>
                         </div>
@@ -448,23 +451,23 @@
 
                     <img class="coming-soon-img" src="wildfires.svg" alt="Girl in a jacket">
                     <p class="heading20">Wildfires</p>
-                    <button class="waitlist-button"><i class="fa fa-bell"></i>Join waitlist</button>
+                    <button class="waitlist-button dark-button"><i class="fa fa-bell"></i>Join waitlist</button>
 
                 </div>
                 <div class="col-3 ">
                     <img class="coming-soon-img" src="tornadoes.svg" alt="Girl in a jacket">
                     <p class="heading20">Tornadoes</p>
-                    <button class="waitlist-button"><i class="fa fa-bell"></i>Join waitlist</button>
+                    <button class="waitlist-button dark-button"><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
                 <div class="col-3 ">
                     <img class="coming-soon-img" src="flood.svg" alt="Girl in a jacket">
                     <p class="heading20">Flood</p>
-                    <button class="waitlist-button"><i class="fa fa-bell"></i>Join waitlist</button>
+                    <button class="waitlist-button dark-button"><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
                 <div class="col-3 ">
                     <img class="coming-soon-img" src="tornadoes.svg" alt="Girl in a jacket">
                     <p class="heading20">Food prices</p>
-                    <button class="waitlist-button"><i class="fa fa-bell"></i>Join waitlist</button>
+                    <button class="waitlist-button dark-button"><i class="fa fa-bell"></i>Join waitlist</button>
                 </div>
             </div>
 
@@ -717,7 +720,7 @@
                         </p>
                     </div>
                     <div class="md">
-                        <button class="waitlist-button" style="max-width: 209px;">Donate your ticket winning</button>
+                        <button class="dark-button" style="max-width: 209px;">Donate your ticket winning</button>
                     </div>
 
                 </div>
@@ -1535,10 +1538,11 @@
 
 
 
-    <div class="modal" id="waitlist-modal">
-        <h3>Enter your e-mail</h3>
-        <p><label>Email:</label><input id="ipt-email" type="email"></p>
-        <p><input type="submit" id="ipt-submit" value="Submit"></p> <a href="#close-modal" rel="modal:close"
-            class="close-modal ">Close</a>
+    <div class="modal email-modal" id="waitlist-modal">
+        <h3>Join the waitlist</h3>
+        <p style="padding-top: 8px;padding-bottom: 8px;">Enter your email bellow</p>
+        <p><input id="ipt-email" style="width: 100%;" type="email"></p>
+        <button class="dark-button" id="ipt-submit">Submit</button>
+        <p id="ipt-close" style="text-align: center; padding-top: 16px;">Not now</p>
     </div>
 </body>
