@@ -80,32 +80,11 @@
                     $('.default-select').width(77);
 
                 }
-                else if (this.value == 'hatteras-island-nc') {
-                    $('#payout').text("$700");
-                    $('#payout-mobile').text("$700");
-                    $('.prepared-select').width(220);
-                    $('.default-select').width(129);
-
-                }
-                else if (this.value == 'jacksonvillem-fl') {
-                    $('#payout').text("$1,250");
-                    $('#payout-mobile').text("$1,250");
-                    $('.prepared-select').width(179);
-                    $('.default-select').width(105);
-
-                }
                 else if (this.value == 'miami-fl') {
                     $('#payout').text("$500");
                     $('#payout-mobile').text("$500");
                     $('.prepared-select').width(107);
                     $('.default-select').width(64);
-
-                }
-                else if (this.value == 'morehead-city-nc') {
-                    $('#payout').text("$1,250");
-                    $('#payout-mobile').text("$1,250");
-                    $('.prepared-select').width(213);
-                    $('.default-select').width(127);
 
                 }
                 else if (this.value == 'nantucket-ma') {
@@ -122,25 +101,11 @@
                     $('.default-select').width(110);
 
                 }
-                else if (this.value == 'norfolk-ct') {
-                    $('#payout').text("$2,500");
-                    $('#payout-mobile').text("$2,500");
-                    $('.prepared-select').width(130);
-                    $('.default-select').width(76);
-
-                }
                 else if (this.value == 'orlando-fl') {
                     $('#payout').text("$1,000");
                     $('#payout-mobile').text("$1,000");
                     $('.prepared-select').width(131);
                     $('.default-select').width(74);
-
-                }
-                else if (this.value == 'panama-city') {
-                    $('#payout').text("$800");
-                    $('#payout-mobile').text("$800");
-                    $('.prepared-select').width(182);
-                    $('.default-select').width(108);
 
                 }
                 else if (this.value == 'tampa-fl') {
@@ -150,11 +115,11 @@
                     $('.default-select').width(69);
 
                 }
-                else if (this.value == 'virginia-beach-va') {
-                    $('#payout').text("$2,500");
-                    $('#payout-mobile').text("$2,500");
-                    $('.prepared-select').width(206);
-                    $('.default-select').width(121);
+                else if (this.value == 'myrtle-beach-sc') {
+                    $('#payout').text("$1,250");
+                    $('#payout-mobile').text("$1,250");
+                    $('.prepared-select').width(188);
+                    $('.default-select').width(120);
 
                 }
                 else if (this.value == 'wilmington-de') {
@@ -169,7 +134,31 @@
             $(".btn-buy-hurricane").click(function () {
                 var value = $('.city').first().find(":selected").val();
                 heap.track('BuyHurricane', { event: 'BuyHurricane', email: $('#ipt-email').val() });
-                window.open('https://rainydaymarket.co/products/' + value);
+
+                if (value == 'charleston-sc') {
+                    link = 'http://learn.rainydaymarket.co/pages/charleston-sc-yes';
+
+                }
+                else if (value == 'coastal-texas') {
+                    link = 'http://learn.rainydaymarket.co/pages/coastal-texas-yes';
+
+                }
+                else if (value == 'new-orleans-la') {
+                    link = 'http://learn.rainydaymarket.co/pages/new-orleans-la-yes';
+
+                }
+                else if (value == 'orlando-fl') {
+                    link = 'http://learn.rainydaymarket.co/pages/orlando-fl-yes';
+
+                }
+                else if (value == 'wilmington-de') {
+                    link = 'http://learn.rainydaymarket.co/pages/wilmington-nc-yes';
+
+                } else if (value == 'myrtle-beach-sc') {
+                    link = 'http://learn.rainydaymarket.co/pages/myrtle-beach-yes';
+                }
+
+                window.open(link);
             });
 
             $('.waitlist-button').on('click', function () {
@@ -183,7 +172,7 @@
 
             $(".btn-buy-gas").click(function () {
                 heap.track('BuyGas', { event: 'BuyGas', email: $('#ipt-email').val() });
-                window.open('https://dailygasmarket.com/products/national-gas-below-dec-31');
+                window.open('https://dailygasmarket.com/checkouts/bin/12d9ae3dc4cbc5b80dd700e9bb79ac20/information?skip_shop_pay=true&locale=en');
             });
 
             $('#ipt-close').on('click', function () {
@@ -234,18 +223,9 @@
                                     <select name="city" class="city prepared-select form-select" id="city">
                                         <option value="coastal-texas">Coastal Texas</option>
                                         <option value="charleston-sc">Charleston, SC</option>
-                                        <option value="gulf-shores-al">Gulf Shores</option>
-                                        <option value="hatteras-island-nc">Hatteras Island, NC</option>
-                                        <option value="jacksonvillem-fl">Jacksonville, FL</option>
-                                        <option value="miami-fl">Miami, FL</option>
-                                        <option value="morehead-city-nc">Morehead City, NC</option>
-                                        <option value="nantucket-ma">Nantucket, MA</option>
                                         <option value="new-orleans-la">New Orlenas, LA</option>
-                                        <option value="norfolk-ct">Norfolk, CT</option>
                                         <option value="orlando-fl">Orlando, FL</option>
-                                        <option value="panama-city-fl">Panama City, FL</option>
-                                        <option value="tampa-fl">Tampa, FL</option>
-                                        <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                        <option value="myrtle-beach-sc">Myrtle Beach, SC</option>
                                         <option value="wilmington-de">Wilmington, DE</option>
                                     </select>
                                 </span>
@@ -293,18 +273,9 @@
                                     <select name="city" class="city default-select" id="city">
                                         <option value="coastal-texas">Coastal Texas</option>
                                         <option value="charleston-sc">Charleston, SC</option>
-                                        <option value="gulf-shores-al">Gulf Shores</option>
-                                        <option value="hatteras-island-nc">Hatteras Island, NC</option>
-                                        <option value="jacksonvillem-fl">Jacksonville, FL</option>
-                                        <option value="miami-fl">Miami, FL</option>
-                                        <option value="morehead-city-nc">Morehead City, NC</option>
-                                        <option value="nantucket-ma">Nantucket, MA</option>
                                         <option value="new-orleans-la">New Orlenas, LA</option>
-                                        <option value="norfolk-ct">Norfolk, CT</option>
                                         <option value="orlando-fl">Orlando, FL</option>
-                                        <option value="panama-city-fl">Panama City, FL</option>
-                                        <option value="tampa-fl">Tampa, FL</option>
-                                        <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                        <option value="myrtle-beach-sc">Myrtle Beach, SC</option>
                                         <option value="wilmington-de">Wilmington, DE</option>
                                     </select>
                                 </span>
@@ -573,18 +544,9 @@
                                             <select name="city" class="city default-select" id="city">
                                                 <option value="coastal-texas">Coastal Texas</option>
                                                 <option value="charleston-sc">Charleston, SC</option>
-                                                <option value="gulf-shores-al">Gulf Shores</option>
-                                                <option value="hatteras-island-nc">Hatteras Island, NC</option>
-                                                <option value="jacksonvillem-fl">Jacksonville, FL</option>
-                                                <option value="miami-fl">Miami, FL</option>
-                                                <option value="morehead-city-nc">Morehead City, NC</option>
-                                                <option value="nantucket-ma">Nantucket, MA</option>
                                                 <option value="new-orleans-la">New Orlenas, LA</option>
-                                                <option value="norfolk-ct">Norfolk, CT</option>
                                                 <option value="orlando-fl">Orlando, FL</option>
-                                                <option value="panama-city-fl">Panama City, FL</option>
-                                                <option value="tampa-fl">Tampa, FL</option>
-                                                <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                                <option value="myrtle-beach-sc">Myrtle Beach, SC</option>
                                                 <option value="wilmington-de">Wilmington, DE</option>
                                             </select>
                                         </span>
@@ -979,18 +941,9 @@
                                 <select name="city" class="city prepared-select form-select" id="city">
                                     <option value="coastal-texas">Coastal Texas</option>
                                     <option value="charleston-sc">Charleston, SC</option>
-                                    <option value="gulf-shores-al">Gulf Shores</option>
-                                    <option value="hatteras-island-nc">Hatteras Island, NC</option>
-                                    <option value="jacksonvillem-fl">Jacksonville, FL</option>
-                                    <option value="miami-fl">Miami, FL</option>
-                                    <option value="morehead-city-nc">Morehead City, NC</option>
-                                    <option value="nantucket-ma">Nantucket, MA</option>
                                     <option value="new-orleans-la">New Orlenas, LA</option>
-                                    <option value="norfolk-ct">Norfolk, CT</option>
                                     <option value="orlando-fl">Orlando, FL</option>
-                                    <option value="panama-city-fl">Panama City, FL</option>
-                                    <option value="tampa-fl">Tampa, FL</option>
-                                    <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                    <option value="myrtle-beach-sc">Myrtle Beach, SC</option>
                                     <option value="wilmington-de">Wilmington, DE</option>
                                 </select>
                             </span>
@@ -1037,18 +990,9 @@
                                     <select name="city" class="city default-select" id="city">
                                         <option value="coastal-texas">Coastal Texas</option>
                                         <option value="charleston-sc">Charleston, SC</option>
-                                        <option value="gulf-shores-al">Gulf Shores</option>
-                                        <option value="hatteras-island-nc">Hatteras Island, NC</option>
-                                        <option value="jacksonvillem-fl">Jacksonville, FL</option>
-                                        <option value="miami-fl">Miami, FL</option>
-                                        <option value="morehead-city-nc">Morehead City, NC</option>
-                                        <option value="nantucket-ma">Nantucket, MA</option>
                                         <option value="new-orleans-la">New Orlenas, LA</option>
-                                        <option value="norfolk-ct">Norfolk, CT</option>
                                         <option value="orlando-fl">Orlando, FL</option>
-                                        <option value="panama-city-fl">Panama City, FL</option>
-                                        <option value="tampa-fl">Tampa, FL</option>
-                                        <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                        <option value="myrtle-beach-sc">Myrtle Beach, SC</option>
                                         <option value="wilmington-de">Wilmington, DE</option>
                                     </select>
                                 </span>
@@ -1312,18 +1256,9 @@
                                             <select name="city" class="city default-select" id="city">
                                                 <option value="coastal-texas">Coastal Texas</option>
                                                 <option value="charleston-sc">Charleston, SC</option>
-                                                <option value="gulf-shores-al">Gulf Shores</option>
-                                                <option value="hatteras-island-nc">Hatteras Island, NC</option>
-                                                <option value="jacksonvillem-fl">Jacksonville, FL</option>
-                                                <option value="miami-fl">Miami, FL</option>
-                                                <option value="morehead-city-nc">Morehead City, NC</option>
-                                                <option value="nantucket-ma">Nantucket, MA</option>
                                                 <option value="new-orleans-la">New Orlenas, LA</option>
-                                                <option value="norfolk-ct">Norfolk, CT</option>
                                                 <option value="orlando-fl">Orlando, FL</option>
-                                                <option value="panama-city-fl">Panama City, FL</option>
-                                                <option value="tampa-fl">Tampa, FL</option>
-                                                <option value="virginia-beach-va">Virginia Beach, VA</option>
+                                                <option value="myrtle-beach-sc">Myrtle Beach, SC</option>
                                                 <option value="wilmington-de">Wilmington, DE</option>
                                             </select>
                                         </span>
